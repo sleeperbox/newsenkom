@@ -591,7 +591,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
   width: 40px;
   height: 3px;
-  background: #ebb329;
+  background: #EAEAEA;
   bottom: 0;
   left: calc(50% - 20px);
 }
