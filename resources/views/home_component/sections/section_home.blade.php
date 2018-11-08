@@ -150,53 +150,6 @@ Contact Section
 </table>
 
 <h5 style="float:right;padding:2px;">{{ $data->links() }}</h5>
-<style>
-ul.pagination li {
-    display: inline;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-ul.pagination li a {
-
-    color: black;
-    padding: 8px 8px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 4px;
-}
-
-ul.pagination li a.active {
-    background-color: #4CAF50;
-    padding: 8px 8px;
-    margin: 0px;
-    color: white;
-    border: 1px solid black;
-}
-
-ul.pagination li.active {
-    /*background-color: #4CAF50;*/
-    background-color: darkorange;
-    padding: 8px 8px;
-    margin: 4px;
-    color: white;
-    border: 1px solid orange;
-}
-
-/*ul.pagination li a:hover:not(.active) {background-color: #ddd;}*/
-ul.pagination li a:hover {background-color: darkorange;color:white;}
-
-ul.pagination li.disabled {
-    /*background-color: #cccccc;*/
-    color: #ddd;
-    padding: 8px 8px;
-    border: 1px solid #ddd;
-    margin: 4px;
-}
-}
-</style>
-  
 
 <!--Table-->
       </div>
@@ -205,7 +158,7 @@ ul.pagination li.disabled {
       <div class="col-md-2 wow fadeInUp">
 
         <div class="section-header">
-          <h3>Kirim Berita</h3>
+          <h3 style="color:#888;"><i class="fa fa-edit"></i> Kirim Berita</h3>
         </div>
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
@@ -237,7 +190,7 @@ ul.pagination li.disabled {
                 </div>
             </div>
             <br/>
-            <div class="text-center"><button type="submit">Kirim</button></div>
+            <div class="text-center"><button type="submit" class="btn-block" style="background:#EAEAEA;color:black;">Kirim Berita</button></div>
           </form>
         </div>
       </div>
@@ -468,5 +421,51 @@ Footer
 
 <!-- Template Main Javascript File -->
 <script src="{{url('public/web/js/main.js')}}"></script>
+<style>
+ul.pagination li {
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+ul.pagination li a {
+
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 4px;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    padding: 8px 8px;
+    margin: 0px;
+    color: white;
+    border: 1px solid black;
+}
+
+ul.pagination li.active {
+    /*background-color: #4CAF50;*/
+    background-color: #555;
+    padding: 8px 8px;
+    margin: 4px;
+    color: white;
+    border: 1px solid #777;
+}
+
+/*ul.pagination li a:hover:not(.active) {background-color: #ddd;}*/
+ul.pagination li a:hover {background-color: #555;color:white;}
+
+ul.pagination li.disabled {
+    /*background-color: #cccccc;*/
+    color: #ddd;
+    padding: 8px 8px;
+    border: 1px solid #ddd;
+    margin: 4px;
+}
+}
+</style>
 </body>
 </html>

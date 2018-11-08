@@ -286,7 +286,7 @@ h6 {
   cursor: pointer;
 }
 
-#intro .btn-get-started {
+.btn-get-started {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -296,13 +296,29 @@ h6 {
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  color: #fff;
+  color: black;
   background: darkorange;
 }
 
-#intro .btn-get-started:hover {
+.btn-biasa{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: 0.5s;
+  color: black;
+  background: #555;
+}
+
+.btn-biasa:hover{
+    background: #e8702a;
+  color: white;
+}
+
+.btn-get-started:hover {
   background: #e8702a;
-  color: #222222;
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -336,7 +352,7 @@ h6 {
 }
 
 .nav-menu li:hover > ul,
-.nav-menu li.sfHover > ul {
+.nav-menu li.sfHo ver > ul {
   display: block;
 }
 
@@ -391,7 +407,7 @@ h6 {
 
 .nav-menu li:hover > a,
 .nav-menu > .menu-active > a {
-  color: #ebb329;
+  color: darkorange;
 }
 
 .nav-menu > li {
@@ -419,7 +435,7 @@ h6 {
 }
 
 .nav-menu ul li:hover > a {
-  color: #ebb329;
+  color: darkorange;
 }
 
 .nav-menu ul ul {
