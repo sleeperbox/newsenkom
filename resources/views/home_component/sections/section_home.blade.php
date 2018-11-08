@@ -123,8 +123,8 @@ Contact Section
     <tr>
       <th>BERITA</th>
       <th>
-      today: <?php echo $tanggal?>
-      <input type="date" style="float:right" />
+      <input type="date"  name="tgl"
+       value="<?php echo $tanggal; ?>" max="2018-12-31" style="float:right" />
       </th>
      
     </tr>
@@ -149,8 +149,53 @@ Contact Section
   <!--Table body-->
 </table>
 
-{{ $data->links() }}
+<h5 style="float:right;padding:2px;">{{ $data->links() }}</h5>
+<style>
+ul.pagination li {
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+}
 
+ul.pagination li a {
+
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 4px;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    padding: 8px 8px;
+    margin: 0px;
+    color: white;
+    border: 1px solid black;
+}
+
+ul.pagination li.active {
+    /*background-color: #4CAF50;*/
+    background-color: darkorange;
+    padding: 8px 8px;
+    margin: 4px;
+    color: white;
+    border: 1px solid orange;
+}
+
+/*ul.pagination li a:hover:not(.active) {background-color: #ddd;}*/
+ul.pagination li a:hover {background-color: darkorange;color:white;}
+
+ul.pagination li.disabled {
+    /*background-color: #cccccc;*/
+    color: #ddd;
+    padding: 8px 8px;
+    border: 1px solid #ddd;
+    margin: 4px;
+}
+}
+</style>
   
 
 <!--Table-->
