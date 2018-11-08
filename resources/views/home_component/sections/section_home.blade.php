@@ -333,18 +333,16 @@ Clients Section
   <div class="container">
 
     <header class="section-header">
-      <h3>Link</h3>
+      <h3>Wilayah</h3>
     </header>
 
     <div class="owl-carousel clients-carousel">
-      <img src="{{url('public/web/img/clients/client-1.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-2.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-3.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-4.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-5.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-6.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-7.png')}}" alt="">
-      <img src="{{url('public/web/img/clients/client-8.png')}}" alt="">
+      <img src="{{url('public/web/img/clients/client-1.png')}}" alt="" style="width:350px;height:150px;margin:30px">
+      <img src="{{url('public/web/img/clients/client-2.png')}}" alt="" style="width:350px;height:150px;margin:30px">
+      <img src="{{url('public/web/img/clients/client-3.png')}}" alt="" style="width:350px;height:150px;margin:30px">
+      <img src="{{url('public/web/img/clients/client-4.png')}}" alt="" style="width:350px;height:150px;margin:30px">
+      <img src="{{url('public/web/img/clients/client-5.png')}}" alt="" style="width:350px;height:150px;margin:30px">
+      <img src="{{url('public/web/img/clients/client-6.png')}}" alt="" style="width:350px;height:150px;margin:30px">
     </div>
 
   </div>
