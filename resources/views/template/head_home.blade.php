@@ -5,7 +5,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
   <!-- Favicons -->
   <link href="{{url('public/web/img/favicon.png')}}" rel="icon">
   <link href="{{url('public/web/img/apple-touch-icon.png')}}" rel="apple-touch-icon">

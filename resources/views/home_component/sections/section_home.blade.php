@@ -51,7 +51,7 @@ Intro Section
             <div class="carousel-content">
               <h2>Handal &amp; Profesional</h2>
               <p> membantu mewujudkan keamanaan dan ketertiban nasional melalui peningkatan kesadaran masyarakat</p>
-              <a href="#featured-services" class="btn-get-started scrollto" style="background: orange">Kirim Berita</a>
+              <a href="#berita" class="btn-get-started scrollto">Kirim Berita</a>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ Intro Section
             <div class="carousel-content">
               <h2>Memberikan Informasi</h2>
               <p>senkom selalu memberikan informasi kepada aparat berwajib termasuk juga Pemerintah di manapun anggota Senkom berada</p>
-              <a href="#featured-services" class="btn-get-started scrollto" style="background: orange">Kirim Berita</a>
+              <a href="#berita" class="btn-get-started scrollto">Kirim Berita</a>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ Intro Section
             <div class="carousel-content">
               <h2>Membangun kesadaran</h2>
               <p>memperluas peran masyarakat dalam ikut membantu pemerintah dan Polri guna menciptakan negara yang aman</p>
-              <a href="#featured-services" class="btn-get-started scrollto" style="background: orange">Kirim Berita</a>
+              <a href="#berita" class="btn-get-started scrollto">Kirim Berita</a>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ Contact Section
 <section id="contact" class="section-bg wow fadeInUp">
 
 
-    <div class="row about-cols offset-md-1" >
+    <div class="row about-cols offset-1">
 
       <div class="col-md-2 wow fadeInUp" id="berita">
          @include('user_component.login')
@@ -122,8 +122,9 @@ Contact Section
   <thead>
     <tr>
       <th>BERITA</th>
-      <th><?php echo $tanggal; ?>
-      <input type="date" style="float:right">
+      <th>
+      today: <?php echo $tanggal?>
+      <input type="date" style="float:right" />
       </th>
      
     </tr>
@@ -147,7 +148,9 @@ Contact Section
   
   <!--Table body-->
 </table>
-<center>{{ $data->links() }} </center>
+
+{{ $data->links() }}
+
   
 
 <!--Table-->
@@ -159,7 +162,7 @@ Contact Section
         <div class="section-header">
           <h3>Kirim Berita</h3>
         </div>
-        <div class="form" >
+        <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
           <form action="{{url('/berita/kirim')}}" method="post" role="form">
@@ -184,7 +187,7 @@ Contact Section
               <div class="validation"></div>
             </div>
 
-            <div class="form">
+            <div class="form" style="width:100px">
                 <div class="g-recaptcha" data-sitekey="6LcsQ3UUAAAAAFIiE7FGOtBld2EZWTCBOuwm9vCw">
                 </div>
             </div>
@@ -430,6 +433,5 @@ Footer
 
 <!-- Template Main Javascript File -->
 <script src="{{url('public/web/js/main.js')}}"></script>
-
 </body>
 </html>

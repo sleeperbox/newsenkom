@@ -16,14 +16,14 @@ body {
 }
 
 a {
-  color: #ebb329;
+  color: #222;
   transition: 0.5s;
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: #ebb329;
+  color: #222;
   outline: none;
   text-decoration: none;
 }
@@ -50,7 +50,7 @@ h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #ebb329;
+  background: darkorange;
   color: #fff;
   width: 44px;
   height: 44px;
@@ -297,12 +297,12 @@ h6 {
   transition: 0.5s;
   margin: 10px;
   color: #fff;
-  background: #ebb329;
+  background: darkorange;
 }
 
 #intro .btn-get-started:hover {
-  background: #fff;
-  color: #ebb329;
+  background: #e8702a;
+  color: #222222;
 }
 
 /*--------------------------------------------------------------
@@ -683,10 +683,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding-top: 8px;
   text-align: center;
   position: absolute;
-  background-color: #ebb329;
+  background-color: #fff;
   border-radius: 50%;
   text-align: center;
-  border: 4px solid #fff;
+  border: 4px solid #f7f7f7;
   left: calc( 50% - 32px);
   bottom: -30px;
   transition: 0.3s;
@@ -695,16 +695,16 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .about-col i {
   font-size: 36px;
   line-height: 1;
-  color: #fff;
+  color: #222;
   transition: 0.3s;
 }
 
 #about .about-col:hover .icon {
-  background-color: #fff;
+  background-color: #555;
 }
 
 #about .about-col:hover i {
-  color: #ebb329;
+  color: #f7f7f7;
 }
 
 #about .about-col h2 {
@@ -721,7 +721,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .about-col h2 a:hover {
-  color: #ebb329;
+  color: darkorange;
 }
 
 #about .about-col p {
@@ -927,7 +927,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio #portfolio-flters li:hover,
 #portfolio #portfolio-flters li.filter-active {
-  background: #ebb329;
+  background: darkorange;
   color: #fff;
 }
 
@@ -1334,7 +1334,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form button[type="submit"] {
-  background: #ebb329;
+  background: darkorange;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1343,7 +1343,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #13a456;
+  background: #e8702a;
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1484,7 +1485,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {
-  background: #ebb329;
+  background: darkorange;
   border: 0;
   width: 35%;
   padding: 6px 0;
@@ -1495,7 +1496,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"]:hover {
-  background: #13a456;
+  background: orange;
 }
 
 #footer .copyright {

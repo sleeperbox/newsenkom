@@ -19,13 +19,13 @@ class BeritaController extends Controller
 	{
 		$tgl = date('Y-m-d');
         $tanggal = $tgl;
-        $data = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(6);
+        $data = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
 		return view('home_component.index', compact('data'));
 	}
 	public function tampil(Request $request){
         $tgl = $request->tgl;
         $format = date('Y-m-d', strtotime($tgl));
-        $data = Berita::where('tgl',$format)->paginate(6);
+        $data = Berita::where('tgl',$format)->paginate(5);
         return view('berita_component.index',compact('data'));
     }
 	public function kirim(Request $request){
