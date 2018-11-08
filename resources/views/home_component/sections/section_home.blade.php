@@ -362,21 +362,12 @@ Footer
     <div class="container">
       <div class="row"  id="kontak">
 
-        <div class="col-lg-3 col-md-6 footer-info">
-          <h3>Senkom Polri</h3>
-          <p>Senkom Mitra Polri adalah salah satu organisasi masyarakat sadar kamtibmas yang didirikan oleh anggota Mitra Kamtibmas Mabes Polri, pada hari Kamis tanggal 1 Januari 2004 di Jakarta. Organisasi masyarakat ini dibentuk untuk jangka waktu yang tidak ditentukan dan bersifat nasional.</p>
+        <div class="col-lg-4 col-md-4 footer-info">
+          <h3>Senkom</h3>
+          <p>Senkom Mitra Polri adalah salah satu organisasi masyarakat sadar kamtibmas yang didirikan oleh anggota Mitra Kamtibmas Mabes Polri, pada hari Kamis tanggal 1 Januari 2004 di Jakarta.</p>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Links</h4>
-          <ul>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Polri</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Basarnas</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Kemenkeu</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-contact">
+         <div class="col-lg-4 col-md-4 footer-contact">
           <h4>Kontak</h4>
           <p>
             JL. Dr. Djunjunan, No. 150, Sukawarna, Sukajadi, Sukagalih, Sukajadi, Kota Bandung, Jawa Barat 40164
@@ -390,12 +381,13 @@ Footer
 
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit"  value="Subscribe">
-          </form>
+        <div class="col-lg-4 col-md-4 footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Polri</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Basarnas</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a href="#">Kemenkeu</a></li>
+          </ul>
         </div>
 
       </div>
