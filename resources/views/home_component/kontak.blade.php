@@ -21,7 +21,7 @@
                         </a>
                     </div>
                 </div>
-            </nav -->>
+            </nav -->
 
         <div class="content">
             <div class="container-fluid">

@@ -74,9 +74,9 @@
                                     <td>
                                       <a href="{{ url('/admin/id',$data->id)}}" role="button" class="btn btn-defauit"><!-- <i class="ti-pencil-alt"></i> --> Edit</a>
 
-                                      <a role="button" type="submit" class="btn btn-danger" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')"><!-- <i class="ti-eraser"></i> -->Hapus</a>
-
-                                      <!-- <input type="submit" class="tn btn-danger btn-sm my-1 p" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')"><i class="ti-eraser"></i></input> -->
+                                      <!-- <a role="button" type="submit" class="btn btn-danger" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</a>
+ -->
+                                       <input type="submit" class="btn btn-danger" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')"></input>
 
                                     </td>
                                   </tr>
