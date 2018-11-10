@@ -74,6 +74,11 @@
             });
       });
   </script>
+  <style type="text/css">
+    body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+  </style>
 
 </head>
 

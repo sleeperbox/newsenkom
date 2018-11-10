@@ -52,11 +52,12 @@
                                   <label> Tanggal Sekarang : <?php echo $tanggal; ?> </label>
                                 </div>
                                 <input type="date" name="tgl" class="form-control border-input">
-                                <div class="text-center">
+                                <div><br/>
                                  <button class="btn btn-info btn-fill btn-wd" type="submit"> Submit</button> 
+                                  <br />
                                 </div>
                               </form>
-
+                              <hr />
                               <div class="row">
                                 @foreach($data_berita as $datas)
                                   <div class="col-lg-6 col-sm-6">
@@ -72,8 +73,8 @@
                                               <div class="footer">
                                                   <hr />
                                                   <div class="stats">  
-                                                    <a href="#" role="button" class="btn btn-info">Edit</a>
-                                                    <a href="#" role="button" class="btn btn-warning">Tampil</a>
+                                                    <a href="#" role="button" class="btn btn-default">Edit</a>
+                                                    <a href="{{url('/berita/hidden',$datas->id)}}" role="button" class="btn btn-warning">Tampil</a>
                                                   </div>
                                               </div>
                                           </div>

@@ -33,7 +33,7 @@ class BeritaController extends Controller
         $pesan = $request->pesan;
         $status_tampil = "tampil";
         $status_pemantauan = "tidak tampil";
-        $recaptcha = new \ReCaptcha\ReCaptcha('6LcsQ3UUAAAAAGK8O86zrgrVeY4HOLOurUlocwTv');
+        $recaptcha = new \ReCaptcha\ReCaptcha('6Lf3uncUAAAAALLt8wE-X5DJ55s-Tnaf0YGRyDde');
         $resp = $recaptcha->verify(Input::get('g-recaptcha-response'), $_SERVER['REMOTE_ADDR']);
         if ($resp->isSuccess()){
             $data = new Berita();
@@ -50,7 +50,7 @@ class BeritaController extends Controller
             // 'text' => 'Dari: '. $nomor .' Pesan: ' . $pesan .' Callsign: ' . $callsign,
             // 'parse_mode' => 'HTML'
             // ]);
-            // $config = Configuration::getDefaultConfiguration();
+            //$config = Configuration::getDefaultConfiguration();
             // $config->setApiKey('Authorization', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU0MDA1OTk0MCwiZXhwIjo0MTAyNDQ0ODAwLCJ1aWQiOjYyOTA1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.CCQ1yUpCU6curWt8Cs3e77UOR2242cprPwJvjl58Kus');
             // $apiClient = new ApiClient($config);
             // $messageClient = new MessageApi($apiClient);

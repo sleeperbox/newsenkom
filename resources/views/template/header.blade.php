@@ -10,7 +10,7 @@
             <div class="logo">
                <!--  <img src="{{url('public/admin/img/SenkomHead.png')}}" class="img-fluid" alt=""> -->
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Senkom
                 </a>
             </div>
 

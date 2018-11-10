@@ -52,23 +52,32 @@
                                   <label> Tanggal Sekarang : <?php echo $tanggal; ?> </label>
                                 </div>
                                 <input type="date" name="tgl" class="form-control border-input">
-                                <div class="text-center">
+                                <br />
+                                <div class="text">
                                  <button class="btn btn-info btn-fill btn-wd" type="submit"> Submit</button> 
                                 </div>
+                                <br />
+                                <hr />
                               </form>
+
 
                               <div class="row">
                                 @foreach($data_berita as $datas)
                                   <div class="col-lg-6 col-sm-6">
                                       <div class="card">
-                                      
+                                        <div class="col-xs-5">
+                                          <div class="icon-big icon-warning text-center">
+                                            <i class="ti-user"></i>
+                                          </div>
+                                        </div>
+
                                           <div class="content">
                                                 <p>{{$datas->callsign}} - {{$datas->tlp}} - {{$datas->jam}}</p>
                                                   {{$datas->pesan}}
                                               <div class="footer">
                                                   <hr />
                                                   <div class="stats">  
-                                                    <a href="#" role="button" class="btn btn-info">Edit</a>
+                                                    <a href="#" role="button" class="btn btn-default">Edit</a>
                                                     <a href="#" role="button" class="btn btn-warning">Tampil</a>
                                                   </div>
                                               </div>

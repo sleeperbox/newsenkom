@@ -57,6 +57,11 @@
                                 <label class="form-check-label">Ubah Password </label><small><i>(Silahkan masukan password baru)</i></small>
                                 <input type="password" name="password" id="pass" class="form-control border-input">
 
+                                <style type="text/css">
+                              .icons{
+                                display: none;
+                              }
+                              </style>
                                  <div class="form-check">
                                     <label class="form-check-label">
                                         <input class="form-check-input" type="checkbox" id="show" onclick="myFunction()">
@@ -69,7 +74,7 @@
                               </div>
 
                               <div class="form-group">
-                                <select name="role" class="form-control selectpicker">
+                                <select name="role" class="form-control border-input">
                                   <?php 
                                     if($data->role == 'admin'){
                                       ?><option value="admin">Admin</option>

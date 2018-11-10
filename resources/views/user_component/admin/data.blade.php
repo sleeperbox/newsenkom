@@ -14,6 +14,5 @@
               </td>
             </tr>
           @endforeach
-          </tbody>
         </table>
         {{ $data_berita->links() }}

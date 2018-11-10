@@ -51,13 +51,23 @@
                             <div class="form-group">
                               <input type="password" name="password" placeholder="Masukan Password" class="form-control border-input" id="pass" required>
                             </div>
-                            <div class="form-check">
+                            <style type="text/css">
+                              .icons{
+                                display: none;
+                              }
+                            </style>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
                               <input type="checkbox" class="form-check-input" id="show" onclick="myFunction()">
                               <label class="form-check-label" for="show">Tampilkan Password</label>
+                              </div>
+                              </div>
+
                             </div>
                             <br />
                             <div class="form-group">
-                              <select class="form-control" name="role">
+                              <select class="form-control border-input" name="role">
                                 <option value="">Pilih Role</option>
                                 <option value="admin">Admin</option>
                                 <option value="basic">Basic</option>
@@ -81,5 +91,23 @@
     </div>
 
     </body>
+    <script type="text/javascript">
+  function myFunction() {
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+  }
+  function show(){
+    var x = document.getElementById("pass2");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    } 
+  }
+  </script>
     
 </html>

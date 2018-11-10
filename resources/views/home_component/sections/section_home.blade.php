@@ -112,6 +112,7 @@ Contact Section
       <div class="col-md-6 wow fadeInUp">
        {{ csrf_field() }}
       <?php
+      date_default_timezone_set("Asia/jakarta");
           $tgl = date('Y-m-d');
           $Jam = date('h:s a');
           $tanggal = $tgl;
@@ -175,7 +176,7 @@ Contact Section
           
            <div class="form-group">
               <label>Tlp / HP <span style="color:red">*</span></label>
-                <input type="text" name="tlp" class="form-control" id="tlp" data-rule="minlen:2" data-msg="Please enter at least 2 chars" />
+                <input type="number" name="tlp" class="form-control" id="tlp" data-rule="minlen:2" data-msg="Please enter at least 2 chars" />
                 <div class="validation"></div>
               </div>
 
@@ -186,7 +187,7 @@ Contact Section
             </div>
 
             <div class="form" style="width:100px">
-                <div class="g-recaptcha" data-sitekey="6LcsQ3UUAAAAAFIiE7FGOtBld2EZWTCBOuwm9vCw">
+                <div class="g-recaptcha" data-sitekey="6Lf3uncUAAAAAFG9Kjj73nHywpvrgxDbBT0fEIu3">
                 </div>
             </div>
             <br/>

@@ -1,132 +1,99 @@
-@extends ('berita_layout')
+<!DOCTYPE html>
+<html>
+<head>
+    @include('template.head_user')
+    <script src="{{url('https://www.google.com/recaptcha/api.js')}}" async defer></script>
+    <title>Apk berita</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-panel" style="background-color: darkorange">
+            <nav class="navbar navbar-default"  style="background-color: darkorange">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        
+                        <a class="navbar-brand" href="#" style="color: white">
+                            SENKOM
+                        </a>
 
-@section ('content')
-        <!-- Page Content -->
- <style type="text/css">
+                        <a class="navbar-brand" href="#" style="float: right;">
+                            <!-- <i class="ti-close"></i> -->
+                            <!-- <p>Settings</p> -->
+                        </a>
+                    </div>
+                </div>
+            </nav>
 
-input[type="text"],
-input[type="date"],
-input[type="number"],
-input[type="text"],
-select.form-control {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
-}
+        <div class="content">
+            <div class="container-fluid">
 
-input[type="text"]:focus,
-select.form-control:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
+                <div class="row">
+                    <div class="col-lg-8 col-md-7">
+                        <div class="card">
+                            <div class="header">
+                                <center><a href="#intro"><img src="{{url('public/web/img/logosenkom.png')}}" width="50" alt="" title="" /></a></center><br /> 
+                                <h4 class="title">Input Berita</h4>
+                            </div>
+                            <div class="content">
+                                <form action="{{url('/berita/kirim')}}" method="post" role="form">
+                                {{ csrf_field() }}
+                                <?php
+                                  $tgl = date('Y-m-d');
+                                  $Jam = date('h:s a');
+                                  $tanggal = $tgl;
+                                  $jam = $Jam;
+                                ?>
 
- </style>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Callsign *</label>
+                                                <input type="hidden" name="tgl" value="<?php echo $tanggal ?>">
+                                                <input type="hidden" name="jam" value="<?php echo $jam ?>">
+                                                <input type="text" name="callsign" class="form-control border-input" id="callsign" data-rule="minlen:2" data-msg="Please enter at least 2 chars" />
+                                                <div class="validation"></div>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
 
-	<div class="container">
-        <div class="section" style="margin-top: -7%"">
-        <section class="details-books py-5">
-            <div class="container py-md-4 mt-md-3">
-            <h2 class="heading-agileinfo">Berita <span>Pengisian data Berita</span></h2>
-                <span class="w3-line black"></span>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>No TLP/HP</label>
+                                                <input type="number" name="tlp" class="form-control border-input" id="tlp" data-rule="minlen:2" data-msg="Please enter at least 2 chars" />
+                                                <div class="validation"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Isi Berita</label>
+                                                <textarea class="form-control border-input" name="pesan" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="isi pesan..."></textarea>
+                                                <div class="validation"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="form">
+                                            <div class="g-recaptcha" data-sitekey="6LcsQ3UUAAAAAFIiE7FGOtBld2EZWTCBOuwm9vCw">
+                                            </div>
+                                        </div><br/>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="row">
-            	<div class="col-sm-7">
-            	</div>
-            	<div class="col-sm-5">
-            	</div>
-            </div>
-        </section> 
         </div>
- 	</div>
-	<!-- ROW -->
-	<div class="row">
 
-		<!-- FEED BERITA -->
-		<div class="col-sm-7">
-
-			<div class="responsive-table">
-				<form action="{{ url('/berita') }}" method="post">
-            	{{ csrf_field() }}
-                	<?php
-                    	$tgl = date('Y-m-d');
-                    	$tanggal = $tgl;
-                	?>
-					<center><h6 class="media-meta pull-right">Tanggal Sekarang : <?php echo $tanggal; ?></h6></center>
-					<hr><br />
-					<input type="date" name="tgl" placeholder="Masukan Tanggal" style=" width: 100%;">
-					<!-- <input type="submit" > -->
-					<button class="btn btn-primary" type="submit" style=" width: 100%;">Kirim</button>
-					<br /> 
-				</form>
-
-				<center>
-				<ul class="list-group w3-agile">
-				  @foreach($data as $datas)
-				    <li class="list-group-item">
-				      <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
-				      <span class="title">{{$datas->callsign}} - {{$datas->tlp}}</span>
-				      <p>{{$datas->pesan}}</p>
-				    </li>
-				    @endforeach
-				</ul>
-				</center>
-				<center>{{ $data->links() }}</center>
-			</div>
-		</div>
-
-
-		<!-- FORM BERITA -->
-		<hr />
-		<div class="col-sm-5">
-			<div class="container">
-			<p style="color: black; text-align: center;">Kirim Berita</p>
-						<br />
-				<div class="row">
-						
-							@if (Session::has('message'))0
-	                		<div class="alert alert-danger">{{ Session::get('message') }}</div>
-	                			@endif
-							<form method="post" action="{{ url('/berita/kirim') }}" class="form-berita" style="color: black; width: 120%">
-								{{ csrf_field() }}
-
-						              	<div class='form-group'>
-							              	<input type="hidden" name="tgl" value="<?php echo $tanggal ?>">
-							              
-											<input type="text" id="inputCallsign" class="form-control" name="callsign" placeholder="CallSign" require>
-											<!-- <label for="callsign">CallSign *</label> -->
-						              	</div>
-						            
-										<div class='form-group'>
-											<input type="number" id="inputTlp" class="form-control" name="tlp" placeholder="No TLP/HP" required>
-											<!-- <label for="tlp">Tlp / Hp</label> -->
-										</div>
-									
-										<div class="form-group">
-											<input type="text" id="inputPesan" class="form-control" name="pesan" placeholder="Isi Pesan" required>
-											<!-- <label for="pesan">Isi Pesan</label>	 -->
-										</div>
-									
-										<div class="form-group"><center>
-											<div class="g-recaptcha" data-sitekey="6Lf3uncUAAAAAFG9Kjj73nHywpvrgxDbBT0fEIu3" ></div></center>
-										</div>
-									
-
-									<button class="btn btn-primary" type="submit" style=" width: 100%;">Kirim</button>
-							
-							</form>
-				</div>
-			</div>
-		</div>
-	
-	</div>
-</div>
-
-
-@endsection
-
-@section ('footer')
-
-@endsection
+        </div>    
+    </div>
+</body>
+</html>

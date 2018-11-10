@@ -194,7 +194,7 @@ class AdminController extends Controller
             return  redirect('/'); 
         }
     }
-    public function hidden_berita(){
+    public function hidden_berita(Request $request){
         $id = $request->id;
         $status = $request->status_tampil;
         $data = Berita::where('id', $id)->first();
@@ -213,7 +213,6 @@ class AdminController extends Controller
     public function telegram(){
         $token = "647754242:AAFoPw6oz2CsYv8wPyUskxHhwezwgOq-y8g";
         $bot = "sleeperboxrev1";
-        $chat_id = "602048323";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
         $json = file_get_contents($telegram_api);
@@ -224,20 +223,85 @@ class AdminController extends Controller
         $update_id = $data['result'][0]['update_id'];
         $lastdata = end($data['result']);
         $message = $lastdata['message']['text'];
+        $chat_id = $lastdata['message']['chat']['id'];
+
         $no2 = "0816863212";
+        $tgl = date('Y-m-d');
+        $Jam = date('h:s a');
+        $tanggal = $tgl;
+        $jam = $Jam;
+        $pecah = explode('-', $message, 3);
+        $callsign = $pecah[0];
+        $no = $pecah[1];
+        $pesan = $pecah[2];
+
+            $data = new Berita();
+            $data->callsign = $callsign;
+            $data->tlp = $no;
+            $data->pesan = $pesan;
+            $data->tgl = $tgl;
+            $data->jam = $jam;
+            $data->status_tampil = "tampil";
+            $data->status_pemantauan = "tidak tampil";
+            $data->save();
+
+        Telegram::sendMessage([
+            'chat_id' => $chat_id, 
+            'text' => "Silahkan Masukan poto",
+            'parse_mode' => 'HTML'
+         ]);
+}
+public function sms(){	
+	// Configure client
+	$config = Configuration::getDefaultConfiguration();
+	$config->setApiKey('Authorization', 		'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU0MTY5NjczNCwiZXhwIjo0MTAyNDQ0ODAwLCJ1aWQiOjYyOTA1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.8uUQaaNJBMwcXG7GyuCf19yySh03vqa6tjrZUzFvPVc');
+	$apiClient = new ApiClient($config);
+	$messageClient = new MessageApi($apiClient);
+    
+	$sms_mes = $messageClient->searchMessages(
+ 	   [
+        'filters' => [
+            [
+                [
+                    'field' => 'status',
+                    'operator' => '=',
+                    'value' => 'received'
+                ]
+            ],
+        ],
+        'order_by' => [
+	    [
+                'field' => 'id',
+                'direction' => 'DESC'
+            ],
+            
+        ],
+        'limit'   => 1,
+        'offset'  => 0
+    	]
+	);
+
+
+	$last_sms = $sms_mes['results'][0]['message'];
+
+	$pecah_sms = explode('-', $last_sms, 3);
+		$callsign_sms = $pecah_sms[0];
+		$no_sms = $pecah_sms[1];
+		$pesan_sms = $pecah_sms[2];
         $tgl = date('Y-m-d');
         $Jam = date('h:s a');
         $tanggal = $tgl;
         $jam = $Jam;
 
             $data = new Berita();
-            $data->callsign = $message;
-            $data->tlp = $no2;
-            $data->pesan = $message;
+            $data->callsign = $callsign_sms;
+            $data->tlp = $no_sms;
+            $data->pesan = $pesan_sms;
             $data->tgl = $tgl;
             $data->jam = $jam;
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
-    }
+
+}
 }
