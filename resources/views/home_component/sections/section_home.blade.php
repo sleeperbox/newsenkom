@@ -22,7 +22,7 @@ Header
       <ul class="nav-menu">
         <li class="menu-active"><a href="#intro">Home</a></li>
         <li><a href="#berita">Berita</a></li>
-        <li><a href="/pemantauan">Pemantauan</a></li>
+        <li><a href="./pemantauan">Pemantauan</a></li>
         <li><a href="#galeri">Galeri</a></li>
         <li class="menu-has-children"><a href="#!">Tentang Senkom</a>
           <ul>
