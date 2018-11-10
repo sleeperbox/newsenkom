@@ -81,4 +81,6 @@ Route::post('/berita/kirim', 'BeritaController@kirim');
 
 Route::get('/galeri', 'GaleriController@index');
 Route::get('/data', 'PemantauanController@data');
+Route::get('/databerita', 'BeritaController@loadberita');
+Route::get('/databeritajam', 'BeritaController@loadberitajam');
 Route::get('/pemantauan', 'PemantauanController@index');

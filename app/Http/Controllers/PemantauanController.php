@@ -12,7 +12,7 @@ class PemantauanController extends Controller
         return view('pemantauan');
     }
     public function data(){
-    	$data_berita = Berita::orderBy('id', 'DESC')->paginate(6);
+    	$data_berita = Berita::orderBy('id', 'DESC')->where('status_pemantauan','tampil')->paginate(6);
         return view('data', compact('data_berita'));
     }
 }

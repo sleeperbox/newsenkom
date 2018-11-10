@@ -20,7 +20,20 @@ class BeritaController extends Controller
         $tanggal = $tgl;
         $data = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
 		return view('home_component.index', compact('data'));
-	}
+    }
+
+    public function loadberita()
+    {
+            $datas = Berita::orderBy('id', 'DESC')->paginate(5);
+            return view('data_berita', compact('datas'));
+    }
+
+    public function loadberitajam()
+    {
+            $datas = Berita::orderBy('id', 'DESC')->paginate(5);
+            return view('data_beritajam', compact('datas'));
+    }
+
 	public function tampil(Request $request){
         $tgl = $request->tgl;
         $format = date('Y-m-d', strtotime($tgl));

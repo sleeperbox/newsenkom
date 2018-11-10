@@ -120,40 +120,32 @@ Contact Section
           $jam = $Jam;
         ?>
           <table class="table table-striped w-auto">
-  <!--Table body-->
-  <thead>
-    <tr>
-      <th>BERITA</th>
-      <th>
-      <input type="date"  name="tgl"
-       value="<?php echo $tanggal; ?>" max="2018-12-31" style="float:right" />
-      </th>
-     
-    </tr>
-  </thead>
-  @foreach($data as $datas)
-  <tbody>
-    <tr class="table">
-      <th scope="row">
-        <div class="icon">
-          <i class="ion-ios-contact"></i>
-        </div>
-      </th>
-      <td>
-        <b>{{$datas->callsign}} - {{$datas->tlp}} - {{$datas->jam}}</b>
-        <p>{{$datas->pesan}}</p>
-      </td>
-    </tr>
-    @endforeach
-    <!-- load 3 biji berita -->
-  </tbody>
+   <!--Table body-->
+      <tr>
+        <th>BERITA</th>
+        <th style="scoped">
+        </th>
+        <th>
+        <input type="date"  name="tgl"
+         value="<?php echo $tanggal; ?>" max="2018-12-31" />
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <p id="showdata"></p>
+        </td>
+        <td style="scoped">
+        </td>
+        <td>
+          <p id="showdatajam"></p>
+        </td>
+      </tr>
+    <!--Table body-->
+  </table>
   
-  <!--Table body-->
-</table>
 
-<h5 style="float:right;padding:2px;">{{ $data->links() }}</h5>
-
-<!--Table-->
+  
+  <!--Table-->
       </div>
       <!-- tengah -->
 
@@ -423,6 +415,18 @@ Footer
 
 <!-- Template Main Javascript File -->
 <script src="{{url('public/web/js/main.js')}}"></script>
+<script>
+  $(document).ready(function() {
+      setInterval(function () {
+        $('#showdata').load('{{ url('/databerita') }}')
+      }, 1000);
+    });
+    $(document).ready(function() {
+      setInterval(function () {
+        $('#showdatajam').load('{{ url('/databeritajam') }}')
+      }, 1000);
+    });
+</script>
 <style>
 ul.pagination li {
     display: inline;
