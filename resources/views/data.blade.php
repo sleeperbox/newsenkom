@@ -1,13 +1,17 @@
+<div class="" style="background: #f7f7f7;opacity:0.9;">
+	<div class="container">
+		<br/>
+		@foreach($data_berita as $datas)
+		<div class="konten" style="margin-top:5px">
+			<i class="ion-ios-contact"></i>
+			<span class="title">
+				<b>{{$datas->callsign}} - {{$datas->tlp}}</b>
+			</span>
+			<p style="float:right">hari/tanggal/tahun</p>
+			<p>{{$datas->pesan}}</p>
+		</div>
+		<br/>
+		@endforeach
+	</div>
+</div>	
 
-
-<center>
-<ul class="list-group w3-agile">
- @foreach($data_berita as $datas)
-	<li class="list-group-item">
-		<span class="title">{{$datas->callsign}} - {{$datas->tlp}}</span>
-		 <p>{{$datas->pesan}}</p>
-	</li>
-	 @endforeach
-</ul>
-</center>
- <!-- <center>{{ $data_berita->links() }}</center> -->
