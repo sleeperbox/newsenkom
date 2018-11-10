@@ -8,10 +8,11 @@
 
         <div class="sidebar-wrapper">
             <div class="logo">
-              <img src="{{url('public/admin/img/index.png')}}" class="img-fluid text-center" alt="senkom polri">
+              <center><img src="{{url('public/admin/img/index.png')}}" class="img-fluid text-center" alt="senkom polri">
                 <a href="http://www.creative-tim.com" class="simple-text">
                     Senkom
                 </a>
+              </center>
             </div>
 
             <ul class="nav">

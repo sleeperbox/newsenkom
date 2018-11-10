@@ -25,66 +25,19 @@
             <div class="content">
               <div class="container-fluid">
                 <div class="row">
-
-                  <div class="col-lg-3 col-sm-6">
-                  </div>
-
-                  <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="ti-user"></i>
-                                        </div>
+                                <div class="col-sm-6 col-md-12 col-xl-12">
+                                  <div class="card">
+                                    <div class="card-body" style="margin:25px;padding:15px">
+                                      <h3 class="card-title">Konfigurasi Data User</h3>
+                                      <p class="card-text">Anda dapat menambahkan dan mengelola user yang ada di sistem ini, silahkan klik tombol dibawah</p>
+                                      <br/>
+                                    <a href="{{url('/datauser')}}" class="btn btn-primary btn-fill"><i class="fa fa-search"></i> Lihat User</a>
+                                      <a href="{{url('/tambahuser')}}" class="btn btn-primary btn-fill"><i class="fa fa-plus-square"></i> Tambah User</a>
+                                      <br/>
+                                      <br/>
                                     </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Data User</p>
-                                            List 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="{{ url('/datauser') }}">Lihat data User</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="ti-plus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Data User</p>
-                                            Tambah
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="{{ url('/tambahuser') }}">Tambah User</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                    </div>
-
-
+                                  </div>
+                                </div> 
                 </div>
               </div>
             </div>

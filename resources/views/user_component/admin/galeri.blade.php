@@ -82,7 +82,7 @@
                               <form action="{{ url('galeri',$image->image) }}" method="POST">
                                   <input type="hidden" name="_method" value="delete">
                                           {!! csrf_field() !!}
-                                  <button type="submit" class="close-icon btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="ti-close"></i></button>
+                                  <button type="submit" class="close-icon btn-fill btn btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="ti-close"></i></button>
 
                                   <!-- <button type="#" class="close-icon btn btn-warning" onclick="return confirm('Yakin ingin Menampilkan data?')"><i class="ti-layers"></i></button> -->
                               </form>
