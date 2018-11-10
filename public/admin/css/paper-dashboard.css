@@ -551,7 +551,6 @@ hr {
 
 .btn,
 .navbar .navbar-nav > li > a.btn {
-    border-radius: 20px;
     box-sizing: border-box;
     border-width: 2px;
     background-color: transparent;

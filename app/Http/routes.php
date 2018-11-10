@@ -47,6 +47,7 @@ Route::get('/faq', function () {
 Route::get('/logout', 'AdminController@logout');
 Route::post('/loginPost', 'AdminController@loginPost');
 Route::get('/admin', 'AdminController@admin');
+Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/user', 'AdminController@admin_user');
 Route::get('/datauser', 'AdminController@datauser');
 Route::get('/tambahuser', 'AdminController@tambahuser');

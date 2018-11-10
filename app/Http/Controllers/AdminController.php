@@ -34,7 +34,22 @@ class AdminController extends Controller
         }else{
             return redirect('/');
         }
+    }
+    
+    public function dashboard(){
+		if(Session::get('login')){
+            if(Session::get('role') == "basic"){
+                return view('user_component.user.dashboard');    
+            }else if(Session::get('role') == "admin"){
+                return view('user_component.admin.dashboard');
+            }else{
+                return redirect('/');    
+            }
+        }else{
+            return redirect('/');
+        }
 	}
+
 	public function loginPost(Request $request){
         $username = $request->username;
         $password = $request->password;
@@ -47,7 +62,7 @@ class AdminController extends Controller
                     Session::put('username',$data->username);
             		Session::put('role',$data->role);
                 	Session::put('login',TRUE);
-                    return redirect('admin');	
+                    return redirect('admin/dashboard');	
             	}else if($data->role == "basic"){
                     Session::put('nama',$data->nama);
                     Session::put('id',$data->id);

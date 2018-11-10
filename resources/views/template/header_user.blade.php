@@ -15,12 +15,6 @@
             </div>
 
             <ul class="nav">
-                <!-- <li class="active">
-                    <a href="{{ url('/admin') }}">
-                        <i class="ti-panel"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li> -->
                 <li>
                     <a href="{{ url('/user/profile') }}">
                         <i class="ti-user"></i>

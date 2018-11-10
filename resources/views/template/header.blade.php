@@ -8,47 +8,40 @@
 
         <div class="sidebar-wrapper">
             <div class="logo">
-               <!--  <img src="{{url('public/admin/img/SenkomHead.png')}}" class="img-fluid" alt=""> -->
+              <img src="{{url('public/admin/img/index.png')}}" class="img-fluid text-center" alt="senkom polri">
                 <a href="http://www.creative-tim.com" class="simple-text">
                     Senkom
                 </a>
             </div>
 
             <ul class="nav">
-                <!-- <li class="active">
+                    <li>
+                            <a href="{{ url('/admin/dashboard') }}">
+                                <p><i class="fa fa-btn fa-th"></i> Dashboard</p>
+                            </a>
+                        </li>
+                <li>
                     <a href="{{ url('/admin') }}">
-                        <i class="ti-panel"></i>
-                        <p>Dashboard</p>
+                        <p><i class="fa fa-btn fa-book"></i> Berita</p>
                     </a>
-                </li> -->
+                </li>
                 <li>
                     <a href="{{ url('/admin/user') }}">
-                        <i class="ti-user"></i>
-                        <p>Data User</p>
+                        <p><i class="fa fa-btn fa-user"></i> Data User</p>
                     </a>
-                </li>
-                <li>
-                    <a href="{{ url('/admin') }}">
-                        <i class="ti-book"></i>
-                        <p>Berita</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('/admin/pemantauan') }}">
-                        <i class="ti-book"></i>
-                        <p>Pemantauan</p>
-                    </a>
-                </li>
                 <li>
                     <a href="{{ url('/galeri') }}">
-                        <i class="ti-image"></i>
-                        <p>Gallery</p>
+                        <p><i class="fa fa-btn fa-file-photo-o"></i> Galeri</p>
                     </a>
                 </li>
+            <li>
+            <a href="{{ url('/admin/pemantauan') }}">
+                <p><i class="fa fa-btn fa-sliders"></i> Slide Setting</p>
+            </a>
+        </li>
                 <li class="active-pro">
                     <a href="{{ url('/logout') }}">
-                        <i class="ti-export"></i>
-                        <p>Log Out</p>
+                        <p><i class="fa fa-btn fa-sign-out"></i> Log Out</p>
                     </a>
                 </li>
             </ul>

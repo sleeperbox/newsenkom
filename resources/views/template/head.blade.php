@@ -23,7 +23,7 @@
 
   <!--  Fonts and icons     -->
   <link href="{{url('https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{url('https://fonts.googleapis.com/css?family=Muli:400,300')}}" rel='stylesheet' type='text/css'>
+  <link href="{{url('https://fonts.googleapis.com/css?family=Roboto:400,300')}}" rel='stylesheet' type='text/css'>
   <link href="{{url('public/admin/css/themify-icons.css')}}" rel="stylesheet">
 
  
@@ -67,7 +67,7 @@
       demo.initChartist();
         $.notify({
           icon: 'ti-gift',
-            message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
+            message: "Senkom Polri Dashboard"
             },{
               type: 'success',
               timer: 4000
@@ -76,7 +76,7 @@
   </script>
   <style type="text/css">
     body {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
   </style>
 
