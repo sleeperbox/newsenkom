@@ -8,7 +8,7 @@
 <body>
     <div class="wrapper">
         <div class="main-panel" style="background-color: darkorange">
-            <nav class="navbar navbar-default"  style="background-color: darkorange">
+           <!--  <nav class="navbar navbar-default"  style="background-color: darkorange">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         
@@ -17,12 +17,11 @@
                         </a>
 
                         <a class="navbar-brand" href="#" style="float: right;">
-                            <!-- <i class="ti-close"></i> -->
-                            <!-- <p>Settings</p> -->
+                            
                         </a>
                     </div>
                 </div>
-            </nav>
+            </nav -->>
 
         <div class="content">
             <div class="container-fluid">
@@ -77,7 +76,7 @@
                                         </div>
                                     </div>
                                         <div class="form">
-                                            <div class="g-recaptcha" data-sitekey="6LcsQ3UUAAAAAFIiE7FGOtBld2EZWTCBOuwm9vCw">
+                                            <div class="g-recaptcha" data-sitekey="6Lf3uncUAAAAAFG9Kjj73nHywpvrgxDbBT0fEIu3">
                                             </div>
                                         </div><br/>
                                     <div class="text-center">
