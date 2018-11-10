@@ -35,11 +35,6 @@
                         <p><i class="fa fa-btn fa-file-photo-o"></i> Galeri</p>
                     </a>
                 </li>
-            <li>
-            <a href="{{ url('/admin/pemantauan') }}">
-                <p><i class="fa fa-btn fa-sliders"></i> Slide Setting</p>
-            </a>
-        </li>
                 <li class="active-pro">
                     <a href="{{ url('/logout') }}">
                         <p><i class="fa fa-btn fa-sign-out"></i> Log Out</p>

@@ -37,6 +37,7 @@
 
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">
+                                   
                                     <strong>Whoops!</strong> There were some problems with your input.<br><br>
                                     <ul>
                                         @foreach ($errors->all() as $error)
@@ -78,7 +79,10 @@
                               <a class="thumbnail fancybox" rel="ligthbox" href="public/images/{{ $image->image }}">
                                 <img class="img-responsive" alt="" src="public/images/{{ $image->image }}" />
                                 <label>{{$image->title}}</label>
+                                <br/>
+                                <button class="btn btn-block btn-primary btn-fill">Set Slider</button>
                               </a>
+                              
                               <form action="{{ url('galeri',$image->image) }}" method="POST">
                                   <input type="hidden" name="_method" value="delete">
                                           {!! csrf_field() !!}

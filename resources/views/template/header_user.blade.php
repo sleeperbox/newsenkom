@@ -28,15 +28,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/user/pemantauan') }}">
-                        <i class="ti-book"></i>
-                        <p>Pemantauan</p>
-                    </a>
-                </li>
-                <li>
                     <a href="{{ url('/galeri') }}">
                         <i class="ti-image"></i>
-                        <p>Gallery</p>
+                        <p>Galeri</p>
                     </a>
                 </li>
                 <li class="active-pro">

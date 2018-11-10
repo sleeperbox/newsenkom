@@ -61,7 +61,6 @@ Route::post('/admin/kirim', 'AdminController@kirim');
 Route::get('/galeri', 'GaleriController@index');
 Route::post('/galeri', 'GaleriController@upload');
 Route::delete('/galeri/{image}', 'GaleriController@destroy');
-Route::get('/admin/pemantauan', 'AdminController@pemantauan');
 Route::get('/berita/hidden/{id}', 'AdminController@hidden_berita');
 Route::get('/telegram', 'AdminController@telegram');
 Route::get('/sms', 'AdminController@sms');
