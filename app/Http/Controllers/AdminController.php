@@ -226,8 +226,8 @@ class AdminController extends Controller
         return redirect('/');
     }
     public function telegram(){
-        $token = "647754242:AAFoPw6oz2CsYv8wPyUskxHhwezwgOq-y8g";
-        $bot = "sleeperboxrev1";
+        $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
+        $bot = "SenkompolriBot";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
         $json = file_get_contents($telegram_api);
@@ -298,7 +298,7 @@ public function sms(){
 
 
 	$last_sms = $sms_mes['results'][0]['message'];
-
+	if(strpos($last_sms, '-') !== false){
 	$pecah_sms = explode('-', $last_sms, 3);
 		$callsign_sms = $pecah_sms[0];
 		$no_sms = $pecah_sms[1];
@@ -317,6 +317,10 @@ public function sms(){
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
+	return redirect('/');
+	} else {
+	return redirect('/');
+	}
 
 }
 }
