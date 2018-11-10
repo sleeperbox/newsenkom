@@ -16,7 +16,7 @@ class BeritaController extends Controller
 {
 	public function index()
 	{
-		$tgl = date('Y-m-d');
+	$tgl = date('Y-m-d');
         $tanggal = $tgl;
         $data = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
 		return view('home_component.index', compact('data'));
@@ -24,13 +24,17 @@ class BeritaController extends Controller
 
     public function loadberita()
     {
-            $datas = Berita::orderBy('id', 'DESC')->paginate(5);
+        $tgl = date('Y-m-d');
+        $tanggal = $tgl;
+            $datas = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
             return view('data_berita', compact('datas'));
     }
 
     public function loadberitajam()
     {
-            $datas = Berita::orderBy('id', 'DESC')->paginate(5);
+        $tgl = date('Y-m-d');
+        $tanggal = $tgl;
+            $datas = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
             return view('data_beritajam', compact('datas'));
     }
 

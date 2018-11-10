@@ -126,12 +126,13 @@ Contact Section
         <th style="scoped">
         </th>
         <th>
-        <input type="date"  name="tgl"
+        <input type="date" class="btn" name="tgl"
          value="<?php echo $tanggal; ?>" max="2018-12-31" />
+         <button type="button" class="btn btn-warning">filter</button>
         </th>
       </tr>
       <tr>
-        <td>
+        <td style="width:60%">
           <p id="showdata"></p>
         </td>
         <td style="scoped">
@@ -142,6 +143,7 @@ Contact Section
       </tr>
     <!--Table body-->
   </table>
+
   
 
   
