@@ -411,7 +411,7 @@ Footer
     });
     $(document).ready(function() {
       setInterval(function () {
-        $('#showsms').load('{{ url('/telegram') }}')
+        $('#showsms').load('{{ url('/sms') }}')
       }, 10000);
     });    
 </script>
