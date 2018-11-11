@@ -357,9 +357,9 @@ Footer
         <div class="col-lg-4 col-md-4 footer-links">
           <h4>Links</h4>
           <ul>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Polri</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Basarnas</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a href="#">Kemenkeu</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://www.polri.go.id/">Polri</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://www.kemhan.go.id/">Kemhan</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="https://bssn.go.id/">BSSN</a></li>
           </ul>
         </div>
 
