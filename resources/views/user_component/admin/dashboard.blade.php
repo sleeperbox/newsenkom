@@ -53,23 +53,9 @@ Footer
       <div class="container">
         <div class="row"  id="kontak">
   
-          <div class="col-lg-4 col-md-4 footer-info">
+          <div class="col-lg-6 col-md-6 footer-info">
             <h3>Senkom</h3>
             <p>Senkom Mitra Polri adalah salah satu organisasi masyarakat sadar kamtibmas yang didirikan oleh anggota Mitra Kamtibmas Mabes Polri, pada hari Kamis tanggal 1 Januari 2004 di Jakarta.</p>
-          </div>
-  
-           <div class="col-lg-4 col-md-4 footer-contact">
-            <h4>Kontak</h4>
-            <p>
-              JL. Dr. Djunjunan, No. 150, Sukawarna, Sukajadi, Sukagalih, Sukajadi, Kota Bandung, Jawa Barat 40164
-            </p>
-  
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-            </div>
-  
           </div>
         </div>
 
