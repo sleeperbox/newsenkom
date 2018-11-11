@@ -36,10 +36,21 @@
                     </a>
                 </li>
                 <li class="active-pro">
-                    <a href="{{ url('/logout') }}">
+                    <a href="{{ url('/logout') }}" id="logout">
                         <p><i class="fa fa-btn fa-sign-out"></i> Log Out</p>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function(){
+    $('a#logout').click(function(){
+        if(confirm('Are you sure to logout')) {
+            return true;
+        }
+
+        return false;
+    });
+});
+    </script>
