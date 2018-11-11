@@ -48,11 +48,6 @@ class GaleriController extends Controller
         }
     }
 
-    public function loadimg(){
-        $galeris = Galeri::orderBy('created_at', 'asc')->take(10)->get();
-        return view('home_component.index', compact('galeris'));
-    }
-
     /**
      * Upload image function
      *
