@@ -434,39 +434,11 @@ Footer
         $('#showdatajam').load('{{ url('/databeritajam') }}')
       }, 1000);
     });
-<<<<<<< HEAD
-$(document).ready(function() {
-      setInterval(function () {
-        $('#showsms').load('{{ url('/sms') }}')
-      }, 1000);
-    });
-$(document).ready(function() {
-      setInterval(function () {
-        $('#showsms').load('{{ url('/telegram') }}')
-      }, 1000);
-    });
-	
-=======
-    $(document).ready(function() {
-      setInterval(function () {
-        $('#showimg').load('{{ url('/dataimg') }}')
-      }, 1000);
-    });
->>>>>>> 0be411365fc4d72aad0654aa9cf7409ab4eaa6a9
-</script>
-<style>
-ul.pagination li {
-    display: inline;
-    font-size: 12px;
-    font-weight: bold;
-}
-
 ul.pagination li a {
 
     color: black;
     padding: 8px 8px;
     text-decoration: none;
-    transition: background-color .3s;
     border: 1px solid #ddd;
     margin: 4px;
 }
