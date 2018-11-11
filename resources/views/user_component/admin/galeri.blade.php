@@ -32,7 +32,7 @@
                         <h4 class="title">Tambah Foto</h4>
                       </div>           
                       <br/>
-                        <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
+                        <form action="{{ URL('/galeri/upload') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
 
@@ -83,7 +83,7 @@
                         <h4 class="title">Tambah Video</h4>
                         <br/>
                       </div>             
-                        <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
+                        <form action="{{ URL('/galeri/upload_vid') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
 
@@ -100,7 +100,7 @@
                             @endif
 
 
-                            @if ($message = Session::get('success'))
+                            @if ($message = Session::get('success-video'))
                             <div class="alert alert-success alert-block">
                                 <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
