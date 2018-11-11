@@ -242,7 +242,7 @@ Contact Section
           </div>
           <h2 class="title"><a href="#">Tujuan</a></h2>
           <p>
-            Memasyarakatkan kamtibmas, meningkatkan kesadaran masyarakat tentang hukum dan kamtibmas serta merupakan wujud partisipasi dalam pembinaan kamtibmas.
+            Memasyarakatkan kamtibmas, meningkatkan kesadaran masyarakat tentang hukum dan kamtibmas serta merupakan wujud partisipasi dalam pembinaan kamtibmas. this is easter egg
           </p>
         </div>
       </div>
