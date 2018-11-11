@@ -16,6 +16,7 @@ use App\Berita;
 use App\User;
 use Telegram;
 
+
 class AdminController extends Controller
 {
     //
@@ -249,7 +250,11 @@ class AdminController extends Controller
         $callsign = $pecah[0];
         $no = $pecah[1];
         $pesan = $pecah[2];
+		$datas = Berita::where('pesan',$pesan)->first();
 
+		if(count($datas) > 0){ 
+		          
+		}else{
             $data = new Berita();
             $data->callsign = $callsign;
             $data->tlp = $no;
@@ -259,7 +264,7 @@ class AdminController extends Controller
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
-
+		}
         Telegram::sendMessage([
             'chat_id' => $chat_id, 
             'text' => "Silahkan Masukan poto",
@@ -295,31 +300,46 @@ public function sms(){
         'offset'  => 0
     	]
 	);
-
-
+	//echo $sms_mes;
+	//$sms_id = ['results'][0]['id'];
 	$last_sms = $sms_mes['results'][0]['message'];
+/*
+	$sms_id = $last_sms['id'];
+	$sms_pesan = $last_sms;
+	echo $sms_id;
+	echo $sms_pesan;
+	echo $sms_id[;
+*/	
 	if(strpos($last_sms, '-') !== false){
-	$pecah_sms = explode('-', $last_sms, 3);
+   
+		$pecah_sms = explode('-', $last_sms, 3);
 		$callsign_sms = $pecah_sms[0];
 		$no_sms = $pecah_sms[1];
 		$pesan_sms = $pecah_sms[2];
-        $tgl = date('Y-m-d');
-        $Jam = date('h:s a');
-        $tanggal = $tgl;
-        $jam = $Jam;
+	
+		$datas = Berita::where('pesan',$pesan_sms)->first();
 
-            $data = new Berita();
-            $data->callsign = $callsign_sms;
-            $data->tlp = $no_sms;
-            $data->pesan = $pesan_sms;
-            $data->tgl = $tgl;
-            $data->jam = $jam;
-            $data->status_tampil = "tampil";
-            $data->status_pemantauan = "tidak tampil";
-            $data->save();
-	return redirect('/');
+       		if(count($datas) > 0){ 
+		          
+		}else{
+		$tgl = date('Y-m-d');
+        	$Jam = date('h:s a');
+       		$tanggal = $tgl;
+        	$jam = $Jam;
+
+            	$data = new Berita();
+            	$data->callsign = $callsign_sms;
+            	$data->tlp = $no_sms;
+            	$data->pesan = $pesan_sms;
+            	$data->tgl = $tgl;
+            	$data->jam = $jam;
+            	$data->status_tampil = "tampil";
+            	$data->status_pemantauan = "tidak tampil";
+            	$data->save();
+		}	
+		//return redirect('/');
 	} else {
-	return redirect('/');
+		//return redirect('/');
 	}
 
 }
