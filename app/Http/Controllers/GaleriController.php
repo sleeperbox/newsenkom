@@ -13,6 +13,7 @@ class GaleriController extends Controller
 {
 
 
+
     /**
      * Listing Of images gallery
      *
@@ -29,6 +30,11 @@ class GaleriController extends Controller
             }
         }
          
+    }
+
+    public function loadimg(){
+        $galeris = Galeri::orderBy('created_at', 'asc')->take(10)->get();
+        return view('data_img', compact('galeris'));
     }
 
     /**
@@ -65,7 +71,8 @@ class GaleriController extends Controller
     public function destroy($image)
     {
     	Galeri::where('image',$image)->delete();
-        File::delete('images/'.$image);
+	$tempat = 'public/images'; 
+	unlink($tempat.'/'.$image);
         
     	return back()
     		->with('success','Gambar Berhasil di Hapus.');	
