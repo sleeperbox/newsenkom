@@ -43,6 +43,7 @@ Route::get('/faq', function () {
     return view('home_component.faq');
 });
 
+
 //Admin Controller
 Route::get('/logout', 'AdminController@logout');
 Route::post('/loginPost', 'AdminController@loginPost');
@@ -70,6 +71,7 @@ Route::get('/sms', 'AdminController@sms');
 
 //User Controller
 Route::get('/user', 'UserController@user');
+Route::get('/user/dashboard', 'UserController@dashboard');
 Route::get('/user/profile', 'UserController@profile');
 Route::get('/user/ubah/{id}', 'UserController@ubah');
 Route::post('/user/update', 'UserController@update');

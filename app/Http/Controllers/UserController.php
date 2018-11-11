@@ -29,10 +29,10 @@ class UserController extends Controller
             }else if(Session::get('role') == "admin"){
                 return Redirect('admin');
             }else{
-                return view('user_component.login');    
+                return view('/');    
             }
         }else{
-            return view('user_component.login');
+            return view('/');
         }
 	}
 	public function user(){
@@ -45,12 +45,28 @@ class UserController extends Controller
             }else if(Session::get('role') == "admin"){
                 return Redirect('admin');
             }else{
-                return view('user_component.login');
+                return view('/');
             }
         }else{
-            return view('user_component.login');
+            return view('/');
         }
 	}
+
+       public function dashboard(){
+        if(Session::get('login')){
+            if(Session::get('role') == "basic"){
+                return view('user_component.user.dashboard');    
+            }else if(Session::get('role') == "admin"){
+                return view('user_component.admin.dashboard');
+            }else{
+                return redirect('/');    
+            }
+        }else{
+            return redirect('/');
+        }
+    }
+
+
 	public function profile(){
 		$id = Session::get('id');
 		$data = User::where('id', $id)->first();

@@ -8,13 +8,19 @@
 
         <div class="sidebar-wrapper">
             <div class="logo">
-               <!--  <img src="{{url('public/admin/img/SenkomHead.png')}}" class="img-fluid" alt=""> -->
-                <a href="#" class="simple-text">
-                    SENKOM
+               <center><img src="{{url('public/admin/img/index.png')}}" class="img-fluid text-center" alt="senkom polri">
+                <a href="/" class="simple-text">
+                    Senkom
                 </a>
+              </center>
             </div>
 
             <ul class="nav">
+                <li>
+                    <a href="{{ url('/user/dashboard') }}">
+                        <p><i class="fa fa-btn fa-th"></i> Dashboard</p>
+                    </a>
+                </li>
                 <li>
                     <a href="{{ url('/user/profile') }}">
                         <i class="ti-user"></i>

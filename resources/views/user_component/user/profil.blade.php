@@ -26,7 +26,7 @@
             <div class="content">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class="col-md-6">
                       <div class="card">
                           <div class="header">
                             <h4 class="title">Informasi Data User</h4>
@@ -41,7 +41,7 @@
                               </div>
                               <div class="form-group">
                                 Role :
-                                <input type="text" name="username" placeholder="Masukan Username" class="form-control border-input" value="{{ $data->role }}" required>
+                                <input type="text" name="username" placeholder="Masukan Username" class="form-control border-input" value="{{ $data->role }}" required Disabled>
                               </div>
                               <div class="form-group">
                                 Nama :
