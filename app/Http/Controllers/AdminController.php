@@ -226,7 +226,7 @@ class AdminController extends Controller
         return redirect('/');
     }
     public function telegram(){
-        $token = "647754242:AAFoPw6oz2CsYv8wPyUskxHhwezwgOq-y8g";
+        $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
         $bot = "sleeperboxrev1";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
@@ -318,7 +318,7 @@ class AdminController extends Controller
         }
     }
     public function telegram_poto(){
-        $token = "647754242:AAFoPw6oz2CsYv8wPyUskxHhwezwgOq-y8g";
+        $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
         $bot = "sleeperboxrev1";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
