@@ -31,8 +31,8 @@
                                       <h3 class="card-title">Konfigurasi Data User</h3>
                                       <p class="card-text">Anda dapat menambahkan dan mengelola user yang ada di sistem ini, silahkan klik tombol dibawah</p>
                                       <br/>
-                                    <a href="{{url('/datauser')}}" class="btn btn-primary btn-fill"><i class="fa fa-search"></i> Lihat User</a>
-                                      <a href="{{url('/tambahuser')}}" class="btn btn-primary btn-fill"><i class="fa fa-plus-square"></i> Tambah User</a>
+                                    <a href="{{url('/datauser')}}" style="background:#596784" class="btn btn-primary btn-fill"><i class="fa fa-search"></i> Lihat User</a>
+                                      <a href="{{url('/tambahuser')}}" style="background:#596784" class="btn btn-primary btn-fill"><i class="fa fa-plus-square"></i> Tambah User</a>
                                       <br/>
                                       <br/>
                                     </div>

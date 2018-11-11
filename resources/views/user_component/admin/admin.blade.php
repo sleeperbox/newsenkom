@@ -53,7 +53,7 @@
                       </small></i></label>
                       <br/>
                       <input type="date" name="tgl" class="dates" value="<?php echo $tgl; ?>">
-                      <button class="btn btn-primary btn-fill btn-wd" type="submit"> Filter</button>
+                      <button style="background:#596784" class="btn btn-primary btn-fill btn-wd" type="submit"> Filter</button>
                     </div>
                   </form>
 
