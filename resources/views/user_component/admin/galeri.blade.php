@@ -28,11 +28,6 @@
             <!-- FOTO UPLOAD START -->
                 <div class="col-md-6">
                   <div class="card">
-                      <div class="header" style="background:#f7f7f7">
-                        <h4 class="title">Tambah Foto</h4>
-                      </div>           
-                      <br/>
-                        <form action="{{ URL('/galeri/upload') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                       <div class="header" style="background:#596784">
                         <h4 class="title" style="color:white">Tambah Foto</h4>
                         <br/>  
@@ -89,7 +84,7 @@
                         <h4 class="title" style="color:white">Tambah Video</h4>
                         <br/>
                       </div>             
-                        <form action="{{ URL('/galeri/upload_vid') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
+                        <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
 
@@ -106,7 +101,7 @@
                             @endif
 
 
-                            @if ($message = Session::get('success-video'))
+                            @if ($message = Session::get('success'))
                             <div class="alert alert-success alert-block">
                                 <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
@@ -221,4 +216,3 @@
     }
     </style>
 </html>
-
