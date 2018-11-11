@@ -62,7 +62,7 @@ Route::get('/galeri', 'GaleriController@index');
 Route::post('/galeri', 'GaleriController@upload');
 Route::delete('/galeri/{image}', 'GaleriController@destroy');
 Route::get('/admin/pemantauan', 'AdminController@pemantauan');
-Route::get('/berita/shownhide/{id}', 'AdminController@shownhide_berita');
+Route::get('/berita/shownhide/{id}', 'AdminController@showhide_berita');
 Route::get('/telegram', 'AdminController@telegram');
 Route::get('/telegramphoto', 'AdminController@telegram_poto');
 Route::get('/sms', 'AdminController@sms');

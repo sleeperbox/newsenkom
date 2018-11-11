@@ -409,16 +409,6 @@ Footer
         $('#showdatajam').load('{{ url('/databeritajam') }}')
       }, 1000);
     });
-    $(document).ready(function() {
-      setInterval(function () {
-        $('#showsms').load('{{ url('/sms') }}')
-      }, 1000);
-    });
-$(document).ready(function() {
-      setInterval(function () {
-        $('#showsms').load('{{ url('/telegram') }}')
-      }, 1000);
-    });    
 </script>
 <style>
 ul.pagination li a {

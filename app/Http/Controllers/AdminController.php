@@ -210,7 +210,7 @@ class AdminController extends Controller
             return  redirect('/'); 
         }
     }
-    public function hidden_berita(Request $request){
+    public function showhide_berita(Request $request){
         $id = $request->id;
         $status = $request->status_tampil;
         $data = Berita::where('id', $id)->first();
@@ -226,9 +226,9 @@ class AdminController extends Controller
         Session::flush();
         return redirect('/');
     }
-    public function telegram(){
+   public function telegram(){
         $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
-        $bot = "SenkompolriBot";
+        $bot = "sleeperboxrev1";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
         $json = file_get_contents($telegram_api);
@@ -241,7 +241,7 @@ class AdminController extends Controller
         $message = $lastdata['message']['text'];
         $chat_id = $lastdata['message']['chat']['id'];
 
-        $no2 = "0816863212";
+        date_default_timezone_set("Asia/jakarta");
         $tgl = date('Y-m-d');
         $Jam = date('h:s a');
         $tanggal = $tgl;
@@ -250,26 +250,83 @@ class AdminController extends Controller
         $callsign = $pecah[0];
         $no = $pecah[1];
         $pesan = $pecah[2];
-		$datas = Berita::where('pesan',$pesan)->first();
 
-		if(count($datas) > 0){ 
-		          
-		}else{
-            $data = new Berita();
-            $data->callsign = $callsign;
-            $data->tlp = $no;
-            $data->pesan = $pesan;
-            $data->tgl = $tgl;
-            $data->jam = $jam;
-            $data->status_tampil = "tampil";
-            $data->status_pemantauan = "tidak tampil";
-            $data->save();
-		}
-        Telegram::sendMessage([
-            'chat_id' => $chat_id, 
-            'text' => "Silahkan Masukan poto",
-            'parse_mode' => 'HTML'
-         ]);
+        $data = Berita::where('callsign',$callsign)->first();
+        if(count($data) > 0){  
+            if(Session::get('poto') != ""){
+                $lokasi_foto = Session::get('poto');
+            
+                $data = new Berita();
+                $data->photo = $lokasi_foto;
+                $data->callsign = $callsign;
+                $data->tlp = $no;
+                $data->pesan = $pesan;
+                $data->tgl = $tgl;
+                $data->jam = $jam;
+                $data->status_tampil = "tampil";
+                $data->status_pemantauan = "tidak tampil";
+                $data->save();
+                Session::flush();
+
+                Telegram::sendMessage([
+                    'chat_id' => $chat_id, 
+                    'text' => "Berita berhasil di input",
+                    'parse_mode' => 'HTML'
+                ]);
+            }else{
+                $data = new Berita();
+                $data->callsign = $callsign;
+                $data->tlp = $no;
+                $data->pesan = $pesan;
+                $data->tgl = $tgl;
+                $data->jam = $jam;
+                $data->status_tampil = "tampil";
+                $data->status_pemantauan = "tidak tampil";
+                $data->save();
+                Session::flush();
+
+                Telegram::sendMessage([
+                    'chat_id' => $chat_id, 
+                    'text' => "Berita berhasil di input",
+                    'parse_mode' => 'HTML'
+                ]);
+            }
+        }else{
+
+        }
+    }
+    public function telegram_poto(){
+        $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
+        $bot = "sleeperboxrev1";
+        $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
+
+        $json = file_get_contents($telegram_api);
+        $data = json_decode($json, true);
+
+        $check =  $data['ok'];
+
+        $update_id = $data['result'][0]['update_id'];
+        $lastdata = end($data['result']);
+        $chat_id = $lastdata['message']['chat']['id'];
+        $photo_id = $lastdata['message']['photo'][0]['file_id'];
+
+        $get_foto = "https://api.telegram.org/bot".$token."/getfile?file_id=".$photo_id;
+
+        $json_foto = file_get_contents($get_foto);
+        $data_foto = json_decode($json_foto, true);
+
+        $lokasi_foto = $data_foto['result']['file_path'];
+
+        if($lokasi_foto == null){
+            Session::put('poto',$lokasi_foto);
+     
+                Telegram::sendMessage([
+                    'chat_id' => $chat_id, 
+                    'text' => "Masukan Callsign-No.Hp-pesan",
+                    'parse_mode' => 'HTML'
+                ]);
+        }else{
+        }
 }
 public function sms(){	
 	// Configure client
