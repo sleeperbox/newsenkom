@@ -147,13 +147,14 @@
                         <div class='list-group gallery'>
                           @if($galeris->count())
                           @foreach($galeris as $image)
-                          <div class="col-md-6 col-xl-4 col-lg-6 col-xs-12">
+                          <div class="col-md-4 col-xl-3 col-lg-3 col-xs-12">
                                 <div class="shadow p-3 mb-5 rounded" style="background:white">
                               <a class="thumbnail" rel="ligthbox" href="public/images/{{ $image->image }}">
                                 <img class="img-responsive" style="height:300px;width:720px" alt="" src="public/images/{{ $image->image }}" />
                             </a>
-                                <h4>Deskripsi</h4>
-                                <p style="color:black;margin:10px;padding:15px">{{$image->title}}</p>    
+                                <h5 style="text-align:center">Deskripsi</h5>
+                                <hr/>
+                                <p style="color:black;margin-bottom:5px;padding:10px;height:100px">{{$image->title}}</p>    
                               <a href="{{ url('/galeri/set1',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 1</a>
                                 <a href="{{ url('/galeri/set2',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 2</a>
                             </div>
