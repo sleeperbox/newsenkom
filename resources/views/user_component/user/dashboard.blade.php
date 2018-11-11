@@ -28,7 +28,7 @@
       <main id="main">
         
             <div class="container-fluid">
-              <h1 class="jumbotron">Welcome to dashboard admin</h1>
+              <h1 class="jumbotron">Welcome to dashboard user</h1>
             </div>
             <section class="section-bg wow fadeInUp">
                 <div class="row about-cols">
