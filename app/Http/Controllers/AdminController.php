@@ -216,6 +216,9 @@ class AdminController extends Controller
         if($data->status_tampil == "tampil"){
             Berita::where('id', $id)->update(['status_tampil' => "tidak tampil"]);
             return redirect('/admin');      
+        }else{
+            Berita::where('id', $id)->update(['status_tampil' => "tampil"]);
+            return redirect('/admin');
         }
     }
 
@@ -226,6 +229,9 @@ class AdminController extends Controller
         if($data->status_tampil == "tidak tampil"){
             Berita::where('id', $id)->update(['status_tampil' => "tampil"]);
             return redirect('/admin');      
+        }else{
+            Berita::where('id', $id)->update(['status_tampil' => "tidak tampil"]);
+            return redirect('/admin');
         }
     }
 
