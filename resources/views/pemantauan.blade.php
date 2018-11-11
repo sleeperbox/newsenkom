@@ -50,13 +50,18 @@
                                     <div class="carousel-inner">
                                       <div class="carousel-item active">
                                           <!-- foreach galeri disini 3 gambar -->
-                                        <img class="d-block w-100" src="http://placehold.it/400x300" alt="First slide">
+                                        @foreach($photo as $poto)
+                                          <?php 
+                                            if($poto->slider1 == "tampil"){
+                                          ?>
+                                        <img class="d-block w-100" src="public/images/{{ $poto->image }}"" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                                <h5>Judul</h5>
-                                                <p>isi pesan</p>
+                                                <h5>{{ $poto->title }}</h5>
                                               </div>
                                           <!-- end foreach galeri -->
+                                            <?php } ?>
                                       </div>
+                                        @endforeach
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -76,14 +81,18 @@
                                     <div class="carousel-inner">
                                       <div class="carousel-item active">
                                           <!-- foreach galeri disini 3 gambar -->
-                                        <img class="d-block w-100" src="http://placehold.it/400x300" alt="First slide">
+                                          @foreach($photo as $poto)
+                                          <?php 
+                                            if($poto->slider2 == "tampil"){
+                                          ?>
+                                        <img class="d-block w-100" src="public/images/{{ $poto->image }}" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
-                                                <h5>Judul</h5>
-                                                <p>isi pesan</p>
+                                                <h5>{{ $poto->title }}</h5>
                                               </div>  
                                         <!-- end foreach galeri -->
-
+                                            <?php } ?>
                                       </div>
+                                        @endforeach
                                     </div>
                                     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

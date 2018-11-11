@@ -252,7 +252,7 @@ class AdminController extends Controller
         $pesan = $pecah[2];
 
         $data = Berita::where('callsign',$callsign)->first();
-        if(count($data) > 0){  
+        if(count($data) == 0){  
             if(Session::get('poto') != ""){
                 $lokasi_foto = Session::get('poto');
             
