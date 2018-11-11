@@ -9,7 +9,7 @@
         <div class="sidebar-wrapper">
             <div class="logo">
               <center><img src="{{url('public/admin/img/index.png')}}" class="img-fluid text-center" alt="senkom polri">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="/" class="simple-text">
                     Senkom
                 </a>
               </center>
