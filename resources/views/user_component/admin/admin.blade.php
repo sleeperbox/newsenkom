@@ -70,10 +70,10 @@
                           {{$datas->pesan}}
                           
                           <span style="float:right"> <?php if($datas->status_tampil == "tampil"){?>
-                            <a href="{{url('/berita/show',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-check"></i> Tampilkan</a>
+                            <a href="{{url('/berita/shownhide',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-close"></i> Sembunyikan</a>
                             <?php } else {
                               ?>
-                              <a href="{{url('/berita/show',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-close"></i> Sembunyikan</a>
+                              <a href="{{url('/berita/shownhide',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-check"></i> Tampilkan</a>
                               <?php
                             }
                             ?></span>
