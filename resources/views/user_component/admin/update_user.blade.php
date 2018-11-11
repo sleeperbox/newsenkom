@@ -47,14 +47,18 @@
 
                             <form action="{{ url('/update') }}" method="post">
                             {{ csrf_field() }}
-
+                            <div class="form-group">
+                                <label>Nama User:</label>
+                                <input type="text" name="nama" placeholder="Masukan Nama" class="form-control border-input"" value="{{ $data->nama }}" required>
+                              </div>
                               <div class="form-group">
+                                <label>Username: </label>
                                 <input type="hidden" name="id" value="{{ $data->id }}">
-                                <input type="text" name="username" placeholder="Masukan Username" class="form-control border-input" value="{{ $data->username }}" required>
+                                <input type="text" name="username" class="form-control border-input" value="{{ $data->username }}" required>
                               </div>
 
                               <div class="form-group">
-                                <label class="form-check-label">Ubah Password </label><small><i>(Silahkan masukan password baru)</i></small>
+                                <label class="form-check-label">Ubah Password </label><small><i style="font-size:12px"> (Silahkan masukan password baru)</i></small>
                                 <input type="password" name="password" id="pass" class="form-control border-input">
 
                                 <style type="text/css">
@@ -74,6 +78,7 @@
                               </div>
 
                               <div class="form-group">
+                                <label>Role (Akses Sistem): </label>
                                 <select name="role" class="form-control border-input">
                                   <?php 
                                     if($data->role == 'admin'){
@@ -86,12 +91,8 @@
                                   ?>  
                                 </select>
                               </div>
-
                               <div class="form-group">
-                                <input type="text" name="nama" placeholder="Masukan Nama" class="form-control border-input"" value="{{ $data->nama }}" required>
-                              </div>
-                              <div class="form-group">
-                                <input type="submit" value="Update" class="btn btn-primary" onclick="return confirm('Yakin ingin di Ubah?')">
+                                <input type="submit" value="Update" class="btn btn-fill btn-primary" onclick="return confirm('Yakin ingin di Ubah?')">
                               </div>
                             </form>
 

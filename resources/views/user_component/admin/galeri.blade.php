@@ -80,8 +80,8 @@
                                 <img class="img-responsive" alt="" src="public/images/{{ $image->image }}" />
                                 <p>{{$image->title}}</p>
                                 <br/>
-                                <button class="btn btn-block btn-primary btn-fill">Set Ke Slider 1</button>
-                                <button class="btn btn-block btn-primary btn-fill">Set Ke Slider 2</button>
+                                <a href="{{ url('/galeri/set1',$image->id) }}" class="btn btn-block btn-primary btn-fill">Set Ke Slider 1</a>
+                                <a href="{{ url('/galeri/set2',$image->id) }}" class="btn btn-block btn-primary btn-fill">Set Ke Slider 2</a>
                               </a>
                               
                               <form action="{{ url('galeri',$image->image) }}" method="POST">

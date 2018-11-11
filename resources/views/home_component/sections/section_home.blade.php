@@ -245,7 +245,7 @@ Contact Section
           </div>
           <h2 class="title"><a href="#">Tujuan</a></h2>
           <p>
-            Memasyarakatkan kamtibmas, meningkatkan kesadaran masyarakat tentang hukum dan kamtibmas serta merupakan wujud partisipasi dalam pembinaan kamtibmas.
+            Memasyarakatkan kamtibmas, meningkatkan kesadaran masyarakat tentang hukum dan kamtibmas serta merupakan wujud partisipasi dalam pembinaan kamtibmas. this is easter egg
           </p>
         </div>
       </div>
@@ -278,18 +278,7 @@ Portfolio Section
     <div class="row portfolio-container">
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-        <div class="portfolio-wrap">
-          <figure>
-            <img src="{{url('public/web/img/portfolio/foto1.jpg')}}" class="img-fluid" alt="">
-            <a href="{{url('public/web/img/portfolio/foto1.jpg')}}" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-            <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-          </figure>
-
-          <div class="portfolio-info">
-            <h4><a href="#">Pak Suryo Hanif</a></h4>
-            <p>Mengadakan berita acara 5.0</p>
-          </div>
-        </div>
+       <p id="showimg"></p>
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
@@ -299,7 +288,7 @@ Portfolio Section
           </figure>
 
           <div class="portfolio-info">
-            <h4><a href="#">Pak Panjaitan</a></h4>
+            <h4><a href="#">Video 1</a></h4>
             <p>Seminar kemanan nasional</p>
           </div>
         </div>
@@ -312,7 +301,7 @@ Portfolio Section
           </figure>
 
           <div class="portfolio-info">
-            <h4><a href="#">Pak Harjo</a></h4>
+            <h4><a href="#">Video 2</a></h4>
             <p>Pelantikan ABCD nasional</p>
           </div>
         </div>
@@ -431,6 +420,7 @@ Footer
         $('#showdatajam').load('{{ url('/databeritajam') }}')
       }, 1000);
     });
+<<<<<<< HEAD
 $(document).ready(function() {
       setInterval(function () {
         $('#showsms').load('{{ url('/sms') }}')
@@ -442,6 +432,13 @@ $(document).ready(function() {
       }, 1000);
     });
 	
+=======
+    $(document).ready(function() {
+      setInterval(function () {
+        $('#showimg').load('{{ url('/dataimg') }}')
+      }, 1000);
+    });
+>>>>>>> 0be411365fc4d72aad0654aa9cf7409ab4eaa6a9
 </script>
 <style>
 ul.pagination li {

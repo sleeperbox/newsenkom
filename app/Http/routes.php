@@ -61,8 +61,10 @@ Route::post('/admin/kirim', 'AdminController@kirim');
 Route::get('/galeri', 'GaleriController@index');
 Route::post('/galeri', 'GaleriController@upload');
 Route::delete('/galeri/{image}', 'GaleriController@destroy');
-Route::get('/berita/hidden/{id}', 'AdminController@hidden_berita');
+Route::get('/admin/pemantauan', 'AdminController@pemantauan');
+Route::get('/berita/shownhide/{id}', 'AdminController@shownhide_berita');
 Route::get('/telegram', 'AdminController@telegram');
+Route::get('/telegramphoto', 'AdminController@telegram_poto');
 Route::get('/sms', 'AdminController@sms');
 
 //User Controller
@@ -74,6 +76,9 @@ Route::post('/user/berita', 'UserController@tampil');
 Route::post('/user/kirim', 'UserController@kirim');
 Route::get('/user/pemantauan', 'UserController@pemantauan');
 
+//gallery Controller
+Route::get('/galeri/set1/{id}', 'GaleriController@slider1');
+Route::get('/galeri/set2/{id}', 'GaleriController@slider2');
 
 Route::get('/', 'BeritaController@index');
 Route::post('/berita', 'BeritaController@tampil');
@@ -84,3 +89,4 @@ Route::get('/data', 'PemantauanController@data');
 Route::get('/databerita', 'BeritaController@loadberita');
 Route::get('/databeritajam', 'BeritaController@loadberitajam');
 Route::get('/pemantauan', 'PemantauanController@index');
+Route::get('/dataimg', 'GaleriController@loadimg');

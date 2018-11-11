@@ -17,7 +17,8 @@ class CreateGalerisTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('image');
-            $table->string('status', 12);
+            $table->string('slider1', 12);
+            $table->string('slider2', 12);
             $table->timestamps();
         });
     }
