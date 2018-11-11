@@ -84,3 +84,4 @@ Route::get('/data', 'PemantauanController@data');
 Route::get('/databerita', 'BeritaController@loadberita');
 Route::get('/databeritajam', 'BeritaController@loadberitajam');
 Route::get('/pemantauan', 'PemantauanController@index');
+Route::get('/dataimg', 'GaleriController@loadimg');
