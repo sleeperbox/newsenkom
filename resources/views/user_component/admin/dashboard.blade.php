@@ -53,14 +53,14 @@ Footer
       <div class="container">
         <div class="row"  id="kontak">
   
-          <div class="col-lg-6 col-md-6 footer-info">
+          <div class="col-lg-4 col-md-4 footer-info">
             <h3>Senkom</h3>
             <p>Senkom Mitra Polri adalah salah satu organisasi masyarakat sadar kamtibmas yang didirikan oleh anggota Mitra Kamtibmas Mabes Polri, pada hari Kamis tanggal 1 Januari 2004 di Jakarta.</p>
           </div>
         </div>
 
         <div class="row"  id="kontak">
-        <div class="col-lg-6 col-md-6 footer-links">
+        <div class="col-lg-4 col-md-4 footer-links">
             <h4>Links</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Polri</a></li>
