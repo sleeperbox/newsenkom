@@ -143,6 +143,9 @@ Contact Section
 	<td>
 	  <p id="showsms"></p>
 	</td>
+	<td>
+	  <p id="showtelegram"></p>
+	</td>
       </tr>
     <!--Table body-->
   </table>
@@ -411,9 +414,14 @@ Footer
     });
     $(document).ready(function() {
       setInterval(function () {
-        $('#showsms').load('{{ url('/telegram') }}')
+        $('#showsms').load('{{ url('/sms') }}')
       }, 10000);
     });    
+    $(document).ready(function() {
+      setInterval(function () {
+        $('#showtelegram').load('{{ url('/telegram') }}')
+      }, 10000);
+    });  
 </script>
 <style>
 ul.pagination li a {
