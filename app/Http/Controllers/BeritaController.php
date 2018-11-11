@@ -32,7 +32,7 @@ class BeritaController extends Controller
     {
         $tgl = date('Y-m-d');
         $tanggal = $tgl;
-            $datas = Berita::where('tgl',$tanggal)->paginate(5);
+            $datas = Berita::orderBy('id', 'dsc')->where('tgl',$tanggal)->paginate(5);
             return view('data_berita', compact('datas'));
     }
 
@@ -40,7 +40,7 @@ class BeritaController extends Controller
     {
         $tgl = date('Y-m-d');
         $tanggal = $tgl;
-            $datas = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
+            $datas = Berita::orderBy('id', 'dsc')->where('tgl',$tanggal)->paginate(5);
             return view('data_beritajam', compact('datas'));
     }
 
@@ -89,6 +89,7 @@ class BeritaController extends Controller
             // $sendMessages = $messageClient->sendMessages([
             // $sendMessageRequest1
             // ]);
+            Session::flash('alert', 'Berita Berhasil di input');
 			return back();
 		}else{
             //$errors = $resp->getErrorCodes();

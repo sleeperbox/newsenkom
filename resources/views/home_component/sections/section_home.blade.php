@@ -160,8 +160,16 @@ Contact Section
           <h3 style="color:#888;"><i class="fa fa-edit"></i> Kirim Berita</h3>
         </div>
         <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
+            @if(\Session::has('alert'))
+              <div class="alert alert-danger">
+                <div>{{ Session::get('alert')}}</div>
+              </div>
+            @endif
+            @if(\Session::has('message'))
+              <div class="alert alert-danger">
+                <div>{{ Session::get('message')}}</div>
+              </div>
+            @endif
           <form action="{{url('/berita/kirim')}}" method="post" role="form">
               {{ csrf_field() }}
               <div class="form-group">
@@ -412,8 +420,13 @@ Footer
     $(document).ready(function() {
       setInterval(function () {
         $('#showsms').load('{{ url('/telegram') }}')
-      }, 10000);
-    });    
+      }, 5000);
+    });
+    $(document).ready(function() {
+      setInterval(function () {
+        $('#showsms').load('{{ url('/telegramphoto') }}')
+      }, 5000);
+    }); 
 </script>
 <style>
 ul.pagination li a {

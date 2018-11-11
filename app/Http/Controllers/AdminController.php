@@ -253,7 +253,7 @@ class AdminController extends Controller
 
         $data = Berita::where('callsign',$callsign)->first();
         if(count($data) == 0){  
-            if(Session::get('poto') != ""){
+            if(Session::get('telegram')){
                 $lokasi_foto = Session::get('poto');
             
                 $data = new Berita();
@@ -316,16 +316,15 @@ class AdminController extends Controller
         $data_foto = json_decode($json_foto, true);
 
         $lokasi_foto = $data_foto['result']['file_path'];
+        $foto = substr($lokasi_foto, -3);
 
-        if($lokasi_foto == null){
-            Session::put('poto',$lokasi_foto);
-     
-                Telegram::sendMessage([
-                    'chat_id' => $chat_id, 
-                    'text' => "Masukan Callsign-No.Hp-pesan",
-                    'parse_mode' => 'HTML'
-                ]);
+        if(Session::get('telegram')){
+            
         }else{
+            Session::put('poto',$lokasi_foto);
+            Session::put('id',$chat_id);
+            Session::put('telegram',TRUE);
+     
         }
 }
 public function sms(){	
