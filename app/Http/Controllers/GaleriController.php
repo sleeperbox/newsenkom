@@ -31,6 +31,22 @@ class GaleriController extends Controller
         }
          
     }
+    public function slider1(Request $request){
+        $id = $request->id;
+        $data = Galeri::where('id', $id)->first();
+        if(count($data) > 0){
+            Galeri::where('id', $id)->update(['slider1' => "tampil", 'slider2' => ""]);
+            return back();      
+        }
+    }
+    public function slider2(Request $request){
+        $id = $request->id;
+        $data = Galeri::where('id', $id)->first();
+        if(count($data) > 0){
+            Galeri::where('id', $id)->update(['slider2' => "tampil", 'slider1' => ""]);
+            return back();      
+        }
+    }
 
     public function loadimg(){
         $galeris = Galeri::orderBy('created_at', 'asc')->take(10)->get();

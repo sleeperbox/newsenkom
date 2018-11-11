@@ -76,6 +76,9 @@ Route::post('/user/berita', 'UserController@tampil');
 Route::post('/user/kirim', 'UserController@kirim');
 Route::get('/user/pemantauan', 'UserController@pemantauan');
 
+//gallery Controller
+Route::get('/galeri/set1/{id}', 'GaleriController@slider1');
+Route::get('/galeri/set2/{id}', 'GaleriController@slider2');
 
 Route::get('/', 'BeritaController@index');
 Route::post('/berita', 'BeritaController@tampil');
