@@ -72,11 +72,11 @@
                                     <td>{{$data->created_at}}</td>
                                     <td>{{$data->update_at}}</td>
                                     <td>
-                                      <a href="{{ url('/admin/id',$data->id)}}" role="button" class="btn btn-defauit"><!-- <i class="ti-pencil-alt"></i> --> Edit</a>
+                                      <a href="{{ url('/admin/id',$data->id)}}" role="button" class="btn btn-fill btn-primary"><!-- <i class="ti-pencil-alt"></i> --> Edit</a>
 
                                       <!-- <a role="button" type="submit" class="btn btn-danger" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')">Hapus</a>
  -->
-                                       <input type="submit" class="btn btn-danger" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')"></input>
+                                       <input type="submit" class="btn btn-fill btn-danger" value="Hapus" onclick="return confirm('Yakin ingin menghapus data?')"></input>
 
                                     </td>
                                   </tr>

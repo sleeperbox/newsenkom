@@ -10,6 +10,7 @@ use SMSGatewayMe\Client\Configuration;
 use SMSGatewayMe\Client\Api\MessageApi;
 use SMSGatewayMe\Client\Model\SendMessageRequest;
 use App\Berita;
+use App\Galeri;
 use App\User;
 use Telegram;
 
@@ -23,7 +24,8 @@ class BeritaController extends Controller
 	    $tgl = date('Y-m-d');
         $tanggal = $tgl;
         $data = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
-		return view('home_component.index', compact('data'));
+        $galeris = Galeri::orderBy('created_at', 'asc')->take(10)->get();
+		return view('home_component.index', compact('data', 'galeris'));
     }
 
     public function loadberita()
