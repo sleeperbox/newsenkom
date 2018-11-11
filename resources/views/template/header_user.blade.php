@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="active-pro">
-                    <a href="{{ url('/logout') }}">
+                    <a href="{{ url('/logout') }}" id="logout">
                         <i class="ti-export"></i>
                         <p>Log Out</p>
                     </a>
@@ -48,3 +48,15 @@
             </ul>
         </div>
     </div>
+    
+    <script type="text/javascript">
+        $(function(){
+    $('a#logout').click(function(){
+        if(confirm('Are you sure to logout')) {
+            return true;
+        }
+
+        return false;
+    });
+});
+    </script>
