@@ -18,6 +18,7 @@ use Telegram;
 
 class AdminController extends Controller
 {
+    
     //
 	public function index(){
         $tgl = date('Y-m-d');
@@ -209,7 +210,7 @@ class AdminController extends Controller
             return  redirect('/'); 
         }
     }
-    public function hidden_berita(Request $request){
+    public function shownhide_berita(Request $request){
         $id = $request->id;
         $status = $request->status_tampil;
         $data = Berita::where('id', $id)->first();
@@ -218,23 +219,10 @@ class AdminController extends Controller
             return redirect('/admin');      
         }else{
             Berita::where('id', $id)->update(['status_tampil' => "tampil"]);
-            return redirect('/admin');
+            return redirect('/admin'); 
         }
     }
-
-    public function show_berita(Request $request){
-        $id = $request->id;
-        $status = $request->status_tampil;
-        $data = Berita::where('id', $id)->first();
-        if($data->status_tampil == "tidak tampil"){
-            Berita::where('id', $id)->update(['status_tampil' => "tampil"]);
-            return redirect('/admin');      
-        }else{
-            Berita::where('id', $id)->update(['status_tampil' => "tidak tampil"]);
-            return redirect('/admin');
-        }
-    }
-
+    
     public function logout(){
         Session::flush();
         return redirect('/');
