@@ -226,8 +226,8 @@ class AdminController extends Controller
         return redirect('/');
     }
     public function telegram(){
-        $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
-        $bot = "SenkompolriBot";
+        $token = "647754242:AAFoPw6oz2CsYv8wPyUskxHhwezwgOq-y8g";
+        $bot = "sleeperboxrev1";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
         $json = file_get_contents($telegram_api);
@@ -240,7 +240,7 @@ class AdminController extends Controller
         $message = $lastdata['message']['text'];
         $chat_id = $lastdata['message']['chat']['id'];
 
-        $no2 = "0816863212";
+        date_default_timezone_set("Asia/jakarta");
         $tgl = date('Y-m-d');
         $Jam = date('h:s a');
         $tanggal = $tgl;
@@ -250,6 +250,53 @@ class AdminController extends Controller
         $no = $pecah[1];
         $pesan = $pecah[2];
 
+        //$data = Berita::where('callsign',$callsign)->first();
+        //if(count($data) == 0){
+        //    Session::put('callsign',$callsign);
+        //    Session::put('no',$no);
+        //    Session::put('pesan',$pesan);
+        //    Session::put('telegram',TRUE);
+               
+        //    Telegram::sendMessage([
+        //        'chat_id' => $chat_id, 
+        //        'text' => "Silahkan Masukan poto",
+        //        'parse_mode' => 'HTML'
+        //    ]);
+        //}else{
+        //    Telegram::sendMessage([
+        //        'chat_id' => $chat_id, 
+        //        'text' => "Callsign sudah ada",
+        //        'parse_mode' => 'HTML'
+        //    ]);
+        //}
+        if(Session::get('poto') != ""){
+            $lokasi_foto = Session::get('poto');
+            
+            $data = new Berita();
+            $data->photo = $lokasi_foto;
+            $data->callsign = $callsign;
+            $data->tlp = $no;
+            $data->pesan = $pesan;
+            $data->tgl = $tgl;
+            $data->jam = $jam;
+            $data->status_tampil = "tampil";
+            $data->status_pemantauan = "tidak tampil";
+            $data->save();
+            Session::flush();
+
+            Telegram::sendMessage([
+                'chat_id' => $chat_id, 
+                'text' => "Berita berhasil di input",
+                'parse_mode' => 'HTML'
+            ]);
+
+            echo $callsign." - ".$no." - ".$pesan;
+            $download_foto = "https://api.telegram.org/file/bot".$token."/".$lokasi_foto;
+            ?>
+               <br />
+                <img src="<?php echo $download_foto ?>"/>
+            <?php
+        }else{
             $data = new Berita();
             $data->callsign = $callsign;
             $data->tlp = $no;
@@ -259,14 +306,79 @@ class AdminController extends Controller
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
+            Session::flush();
 
-        Telegram::sendMessage([
-            'chat_id' => $chat_id, 
-            'text' => "Silahkan Masukan poto",
-            'parse_mode' => 'HTML'
-         ]);
-}
-public function sms(){	
+            Telegram::sendMessage([
+                'chat_id' => $chat_id, 
+                'text' => "Berita berhasil di input",
+                'parse_mode' => 'HTML'
+            ]);
+
+            echo $callsign." - ".$no." - ".$pesan;
+        }
+    }
+    public function telegram_poto(){
+        $token = "647754242:AAFoPw6oz2CsYv8wPyUskxHhwezwgOq-y8g";
+        $bot = "sleeperboxrev1";
+        $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
+
+        $json = file_get_contents($telegram_api);
+        $data = json_decode($json, true);
+
+        $check =  $data['ok'];
+
+        $update_id = $data['result'][0]['update_id'];
+        $lastdata = end($data['result']);
+        $chat_id = $lastdata['message']['chat']['id'];
+        $photo_id = $lastdata['message']['photo'][0]['file_id'];
+
+        $get_foto = "https://api.telegram.org/bot".$token."/getfile?file_id=".$photo_id;
+
+        $json_foto = file_get_contents($get_foto);
+        $data_foto = json_decode($json_foto, true);
+
+        $lokasi_foto = $data_foto['result']['file_path'];
+        date_default_timezone_set("Asia/jakarta");
+        $tgl = date('Y-m-d');
+        $Jam = date('h:s a');
+        $tanggal = $tgl;
+        $jam = $Jam;
+        Session::put('poto',$lokasi_foto);
+        // if(Session::get('telegram')){
+        //    $callsign = Session::get('callsign');
+        //    $no = Session::get('no');
+        //    $pesan = Session::get('pesan');
+            
+        //    $data = new Berita();
+        //    $data->photo = $lokasi_foto;
+        //    $data->callsign = $callsign;
+        //    $data->tlp = $no;
+        //    $data->pesan = $pesan;
+        //    $data->tgl = $tgl;
+        //    $data->jam = $jam;
+        //    $data->status_tampil = "tampil";
+        //    $data->status_pemantauan = "tidak tampil";
+        //    $data->save();
+        //    Session::flush();
+
+            Telegram::sendMessage([
+                'chat_id' => $chat_id, 
+                'text' => "Masukan Callsign-No.Hp-pesan",
+                'parse_mode' => 'HTML'
+            ]);
+
+        //    echo $callsign." - ".$no." - ".$pesan;
+        //    $download_foto = "https://api.telegram.org/file/bot".$token."/".$lokasi_foto;
+        //   
+        //}else{
+        //    Telegram::sendMessage([
+        //        'chat_id' => $chat_id, 
+        //        'text' => "Harap Input dulu callsign-no-pesan",
+        //        'parse_mode' => 'HTML'
+        //    ]);
+        //}
+    }
+    public function sms(){	
 	// Configure client
 	$config = Configuration::getDefaultConfiguration();
 	$config->setApiKey('Authorization', 		'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU0MTY5NjczNCwiZXhwIjo0MTAyNDQ0ODAwLCJ1aWQiOjYyOTA1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.8uUQaaNJBMwcXG7GyuCf19yySh03vqa6tjrZUzFvPVc');
@@ -298,11 +410,12 @@ public function sms(){
 
 
 	$last_sms = $sms_mes['results'][0]['message'];
-	if(strpos($last_sms, '-') !== false){
+
 	$pecah_sms = explode('-', $last_sms, 3);
 		$callsign_sms = $pecah_sms[0];
 		$no_sms = $pecah_sms[1];
 		$pesan_sms = $pecah_sms[2];
+        date_default_timezone_set("Asia/jakarta");
         $tgl = date('Y-m-d');
         $Jam = date('h:s a');
         $tanggal = $tgl;
@@ -317,10 +430,6 @@ public function sms(){
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
-	return redirect('/');
-	} else {
-	return redirect('/');
-	}
 
-}
+    }
 }
