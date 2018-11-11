@@ -28,7 +28,7 @@
       <div class="content">
             <div class="container-fluid">
             
-            <h1 class="jumbotron">HELLOW</h1>
+            <h1 class="jumbotron">Welcome to dashboard admin</h1>
             
             
             </div>

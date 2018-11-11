@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <br/>
-                                    <button type="submit" class="btn btn-default">Upload</button>
+                                    <button type="submit" class="btn btn-primary btn-fill">UPLOAD</button>
                                 </div>
                             </div>
                         </form>
@@ -78,9 +78,10 @@
                           <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
                               <a class="thumbnail fancybox" rel="ligthbox" href="public/images/{{ $image->image }}">
                                 <img class="img-responsive" alt="" src="public/images/{{ $image->image }}" />
-                                <label>{{$image->title}}</label>
+                                <p>{{$image->title}}</p>
                                 <br/>
-                                <button class="btn btn-block btn-primary btn-fill">Set Slider</button>
+                                <button class="btn btn-block btn-primary btn-fill">Set Ke Slider 1</button>
+                                <button class="btn btn-block btn-primary btn-fill">Set Ke Slider 2</button>
                               </a>
                               
                               <form action="{{ url('galeri',$image->image) }}" method="POST">

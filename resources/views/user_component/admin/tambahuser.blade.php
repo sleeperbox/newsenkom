@@ -45,10 +45,16 @@
                             @endif
                           <form action="{{ url('/tambah') }}" method="post">
                           {{ csrf_field() }}
-                            <div class="form-group">
-                              <input type="text" name="username" placeholder="Masukan Username" class="form-control border-input" required>
+                          <div class="form-group">
+                              <label>Nama Pengguna:</label>
+                              <input type="text" name="nama" placeholder="Masukan Nama" class="form-control border-input" required>
                             </div>
                             <div class="form-group">
+                              <label>Username:</label>
+                              <input type="text" name="username" placeholder="Masukan Username" class="form-control border-input cols-lg-6" required>
+                            </div>
+                            <div class="form-group">
+                              <label>Password:</label>
                               <input type="password" name="password" placeholder="Masukan Password" class="form-control border-input" id="pass" required>
                             </div>
                             <style type="text/css">
@@ -74,10 +80,7 @@
                               </select>
                             </div>
                             <div class="form-group">
-                              <input type="text" name="nama" placeholder="Masukan Nama" class="form-control border-input" required>
-                            </div>
-                            <div class="form-group">
-                              <input type="submit" value="Tambah" class="btn btn-primary">
+                              <input type="submit" value="Tambahkan" class="btn btn-fill btn-primary">
                             </div>
                           </form>
 

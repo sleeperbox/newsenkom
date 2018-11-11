@@ -71,7 +71,8 @@ class GaleriController extends Controller
     public function destroy($image)
     {
     	Galeri::where('image',$image)->delete();
-        File::delete('images/'.$image);
+	$tempat = 'public/images'; 
+	unlink($tempat.'/'.$image);
         
     	return back()
     		->with('success','Gambar Berhasil di Hapus.');	
