@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Galeri;
+use App\Galerivideos;
 use File;
 
 
@@ -63,14 +64,23 @@ class GaleriController extends Controller
 
         $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
         $request->image->move(public_path('images'), $input['image']);
-
-        $input['videolink'] = $request->videolink;
-        $input['title'] = $request->title;
-        Galeri::create($input);
-
-
-    	return back()
+	$input['title'] = $request->title;
+	Galeri::create($input);		
+	return back()
     		->with('success','berhasil di upload');
+        }
+	public function upload_vid(Request $request)
+    {
+    	$this->validate($request, [
+    		'title' => 'required',
+   	     ]);
+
+	$input['videolink'] = $request->videolink;
+        $input['title'] = $request->title;
+        Galerivideos::create($input);
+		return back()
+    		->with('success-video','berhasil di upload');
+            	
     }
 
 
@@ -87,5 +97,12 @@ class GaleriController extends Controller
         
     	return back()
     		->with('success','Gambar Berhasil di Hapus.');	
+    }
+    public function destroy_video($videolink)
+    {
+    	Galerivideos::where('videolink',$videolink)->delete();
+        
+    	return back()
+    		->with('success-video','Berhasil di Hapus.');	
     }
 }

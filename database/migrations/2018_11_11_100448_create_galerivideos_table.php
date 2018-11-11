@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGalerisTable extends Migration
+class CreateGalerivideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +12,10 @@ class CreateGalerisTable extends Migration
      */
     public function up()
     {
-        Schema::create('galeris', function (Blueprint $table) {
+        Schema::create('galerivideos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('image');
+            $table->string('videolink');
             $table->string('slider1', 12);
             $table->string('slider2', 12);
             $table->timestamps();
@@ -31,6 +30,6 @@ class CreateGalerisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galeris');
+        Schema::drop('galerivideos');
     }
 }
