@@ -52,7 +52,7 @@
     <script type="text/javascript">
         $(function(){
     $('a#logout').click(function(){
-        if(confirm('Are you sure to logout')) {
+        if(confirm('Anda yakin untuk Logout?')) {
             return true;
         }
 

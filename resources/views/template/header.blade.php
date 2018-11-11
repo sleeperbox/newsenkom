@@ -44,13 +44,13 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(function(){
+    $(function(){
     $('a#logout').click(function(){
-        if(confirm('Are you sure to logout')) {
+        if(confirm('Anda yakin untuk Logout?')) {
             return true;
         }
 
         return false;
+        });
     });
-});
     </script>

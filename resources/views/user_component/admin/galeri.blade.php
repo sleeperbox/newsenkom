@@ -33,7 +33,7 @@
                         <br/>  
                     </div>           
                       
-                        <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
+                        <form action="{{ URL('/galeri/upload') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
 
@@ -84,7 +84,7 @@
                         <h4 class="title" style="color:white">Tambah Video</h4>
                         <br/>
                       </div>             
-                        <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
+                        <form action="{{ URL('/galeri/upload_vid') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
 
@@ -155,8 +155,8 @@
                                 <h5 style="text-align:center">Deskripsi</h5>
                                 <hr/>
                                 <p style="color:black;margin-bottom:5px;padding:10px;height:100px">{{$image->title}}</p>    
-                              <a href="{{ url('/galeri/set1',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 1</a>
-                                <a href="{{ url('/galeri/set2',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 2</a>
+                              <a href="{{ url('/galeri/set1',$image->id) }}" class="btn btn-block" style="text-align:center" id="set1" >Set Ke Slider 1</a>
+                                <a href="{{ url('/galeri/set2',$image->id) }}" class="btn btn-block" style="text-align:center" id="set2" >Set Ke Slider 2</a>
                             </div>
                               <form action="{{ url('galeri',$image->image) }}" method="POST">
                                   <input type="hidden" name="_method" value="delete">
@@ -183,22 +183,8 @@
   input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
 }
-</style>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $(".fancybox").fancybox({
-            openEffect: "none",
-            closeEffect: "none"
-        });
-    });
-    $(".delete").on("submit", function(){
-        return  confirm("Yakin ingin menghapus gambar?");
-    })
-</script>
-
-<style type="text/css">
-    .gallery
+.gallery
     {
         display: inline-block;
         margin-top: 20px;
@@ -214,5 +200,41 @@
         background: #e8e8e8 none repeat scroll 0 0;
         padding: 15px;
     }
-    </style>
+
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+        });
+    });
+    $(".delete").on("submit", function(){
+        return  confirm("Yakin ingin menghapus gambar?");
+    })
+
+    $(function(){
+    $('a#set1').click(function(){
+        if(confirm('Yakin Ingin Memasang ke dalam slide 1?')) {
+            return true;
+        }
+
+        return false;
+        });
+    });
+
+    $(function(){
+    $('a#set2').click(function(){
+        if(confirm('Yakin Ingin Memasang ke dalam slide 2?')) {
+            return true;
+        }
+
+        return false;
+        });
+    });
+
+
+</script>
+
 </html>
