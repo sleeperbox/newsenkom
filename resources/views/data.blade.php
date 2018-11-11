@@ -7,7 +7,7 @@
 			<span class="title">
 				<b>{{$datas->callsign}} - {{$datas->tlp}}</b>
 			</span>
-			<p style="float:right">hari/tanggal/tahun</p>
+			<p style="float:right">{{$datas->tgl}} - {{$datas->jam}}</p>
 			<p>{{$datas->pesan}}</p>
 		</div>
 		<br/>

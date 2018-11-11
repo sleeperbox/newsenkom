@@ -30,7 +30,7 @@ class BeritaController extends Controller
     {
         $tgl = date('Y-m-d');
         $tanggal = $tgl;
-            $datas = Berita::where('tgl',$tanggal)->where('status_tampil',"tampil")->paginate(5);
+            $datas = Berita::where('tgl',$tanggal)->paginate(5);
             return view('data_berita', compact('datas'));
     }
 

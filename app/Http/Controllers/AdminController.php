@@ -215,10 +215,10 @@ class AdminController extends Controller
         $data = Berita::where('id', $id)->first();
         if($data->status_tampil == "tampil"){
             Berita::where('id', $id)->update(['status_tampil' => "tidak tampil"]);
-            return back();      
+            return redirect('/admin');      
         }else{
             Berita::where('id', $id)->update(['status_tampil' => "tampil"]);
-            return back();
+            return redirect('/admin');
         }
     }
     public function logout(){

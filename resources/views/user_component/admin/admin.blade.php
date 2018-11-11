@@ -73,7 +73,7 @@
                             <a href="{{url('/berita/show',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-check"></i> Tampilkan</a>
                             <?php } else {
                               ?>
-                              <a href="{{url('/berita/hidden',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-close"></i> Sembunyikan</a>
+                              <a href="{{url('/berita/show',$datas->id)}}" role="button" class="btn btn-fill btn-primary"><i class="fa fa-close"></i> Sembunyikan</a>
                               <?php
                             }
                             ?></span>
