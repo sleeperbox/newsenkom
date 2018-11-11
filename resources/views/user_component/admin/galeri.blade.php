@@ -28,10 +28,11 @@
             <!-- FOTO UPLOAD START -->
                 <div class="col-md-6">
                   <div class="card">
-                      <div class="header" style="background:#f7f7f7">
-                        <h4 class="title">Tambah Foto</h4>
-                      </div>           
-                      <br/>
+                      <div class="header" style="background:#596784">
+                        <h4 class="title" style="color:white">Tambah Foto</h4>
+                        <br/>  
+                    </div>           
+                      
                         <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
                             {!! csrf_field() !!}
 
@@ -79,8 +80,8 @@
             <!-- VIDEO UPLOAD START -->
             <div class="col-md-6">
                   <div class="card">
-                      <div class="header" style="background:#f7f7f7">
-                        <h4 class="title">Tambah Video</h4>
+                      <div class="header" style="background:#596784">
+                        <h4 class="title" style="color:white">Tambah Video</h4>
                         <br/>
                       </div>             
                         <form action="{{ URL('/galeri') }}" class="form-image-upload" method="post" enctype="multipart/form-data">
@@ -129,13 +130,14 @@
             <!-- VIDEO UPLOAD END -->
             <style>
                 .btn{
-                    border:#f7f7f7;
-                    background:#fff;
-                    text-align: left
+                    border:black;
+                    background:#596784;
+                    text-align: left;
+                    color:white;
                 }
                 .btn:hover{
-                    background:#f7f7f7;
-                    color:black;
+                    background:#425381;
+                    color:white;
                 }
             </style>
        
@@ -145,15 +147,16 @@
                         <div class='list-group gallery'>
                           @if($galeris->count())
                           @foreach($galeris as $image)
-                          <div class="col-md-6 col-xl-3 col-lg-3 col-xs-12">
+                          <div class="col-md-6 col-xl-4 col-lg-6 col-xs-12">
+                                <div class="shadow p-3 mb-5 rounded" style="background:white">
                               <a class="thumbnail" rel="ligthbox" href="public/images/{{ $image->image }}">
                                 <img class="img-responsive" style="height:300px;width:720px" alt="" src="public/images/{{ $image->image }}" />
-                                <p>{{$image->title}}</p>
-                                <br/>
-                                <a href="{{ url('/galeri/set1',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 1</a>
+                            </a>
+                                <h4>Deskripsi</h4>
+                                <p style="color:black;margin:10px;padding:15px">{{$image->title}}</p>    
+                              <a href="{{ url('/galeri/set1',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 1</a>
                                 <a href="{{ url('/galeri/set2',$image->id) }}" class="btn btn-block" style="text-align:center">Set Ke Slider 2</a>
-                              </a>
-                              
+                            </div>
                               <form action="{{ url('galeri',$image->image) }}" method="POST">
                                   <input type="hidden" name="_method" value="delete">
                                           {!! csrf_field() !!}
