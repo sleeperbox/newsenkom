@@ -16,6 +16,7 @@ use App\Berita;
 use App\User;
 use Telegram;
 
+
 class AdminController extends Controller
 {
     
@@ -251,7 +252,13 @@ class AdminController extends Controller
         $callsign = $pecah[0];
         $no = $pecah[1];
         $pesan = $pecah[2];
+		$datas = Berita::where('pesan',$pesan)->first();
 
+<<<<<<< HEAD
+		if(count($datas) > 0){ 
+		          
+		}else{
+=======
         //$data = Berita::where('callsign',$callsign)->first();
         //if(count($data) == 0){
         //    Session::put('callsign',$callsign);
@@ -274,6 +281,7 @@ class AdminController extends Controller
         if(Session::get('poto') != ""){
             $lokasi_foto = Session::get('poto');
             
+>>>>>>> 0be411365fc4d72aad0654aa9cf7409ab4eaa6a9
             $data = new Berita();
             $data->photo = $lokasi_foto;
             $data->callsign = $callsign;
@@ -284,6 +292,16 @@ class AdminController extends Controller
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
+<<<<<<< HEAD
+		}
+        Telegram::sendMessage([
+            'chat_id' => $chat_id, 
+            'text' => "Silahkan Masukan poto",
+            'parse_mode' => 'HTML'
+         ]);
+}
+public function sms(){	
+=======
             Session::flush();
 
             Telegram::sendMessage([
@@ -381,6 +399,7 @@ class AdminController extends Controller
         //}
     }
     public function sms(){	
+>>>>>>> 0be411365fc4d72aad0654aa9cf7409ab4eaa6a9
 	// Configure client
 	$config = Configuration::getDefaultConfiguration();
 	$config->setApiKey('Authorization', 		'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU0MTY5NjczNCwiZXhwIjo0MTAyNDQ0ODAwLCJ1aWQiOjYyOTA1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.8uUQaaNJBMwcXG7GyuCf19yySh03vqa6tjrZUzFvPVc');
@@ -409,9 +428,49 @@ class AdminController extends Controller
         'offset'  => 0
     	]
 	);
-
-
+	//echo $sms_mes;
+	//$sms_id = ['results'][0]['id'];
 	$last_sms = $sms_mes['results'][0]['message'];
+<<<<<<< HEAD
+/*
+	$sms_id = $last_sms['id'];
+	$sms_pesan = $last_sms;
+	echo $sms_id;
+	echo $sms_pesan;
+	echo $sms_id[;
+*/	
+	if(strpos($last_sms, '-') !== false){
+   
+		$pecah_sms = explode('-', $last_sms, 3);
+		$callsign_sms = $pecah_sms[0];
+		$no_sms = $pecah_sms[1];
+		$pesan_sms = $pecah_sms[2];
+	
+		$datas = Berita::where('pesan',$pesan_sms)->first();
+
+       		if(count($datas) > 0){ 
+		          
+		}else{
+		$tgl = date('Y-m-d');
+        	$Jam = date('h:s a');
+       		$tanggal = $tgl;
+        	$jam = $Jam;
+
+            	$data = new Berita();
+            	$data->callsign = $callsign_sms;
+            	$data->tlp = $no_sms;
+            	$data->pesan = $pesan_sms;
+            	$data->tgl = $tgl;
+            	$data->jam = $jam;
+            	$data->status_tampil = "tampil";
+            	$data->status_pemantauan = "tidak tampil";
+            	$data->save();
+		}	
+		//return redirect('/');
+	} else {
+		//return redirect('/');
+	}
+=======
 
 	$pecah_sms = explode('-', $last_sms, 3);
 		$callsign_sms = $pecah_sms[0];
@@ -432,6 +491,7 @@ class AdminController extends Controller
             $data->status_tampil = "tampil";
             $data->status_pemantauan = "tidak tampil";
             $data->save();
+>>>>>>> 0be411365fc4d72aad0654aa9cf7409ab4eaa6a9
 
     }
 }

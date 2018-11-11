@@ -140,6 +140,9 @@ Contact Section
         <td>
           <p id="showdatajam"></p>
         </td>
+	<td>
+	  <p id="showsms"></p>
+	</td>
       </tr>
     <!--Table body-->
   </table>
@@ -431,11 +434,25 @@ Footer
         $('#showdatajam').load('{{ url('/databeritajam') }}')
       }, 1000);
     });
+<<<<<<< HEAD
+$(document).ready(function() {
+      setInterval(function () {
+        $('#showsms').load('{{ url('/sms') }}')
+      }, 1000);
+    });
+$(document).ready(function() {
+      setInterval(function () {
+        $('#showsms').load('{{ url('/telegram') }}')
+      }, 1000);
+    });
+	
+=======
     $(document).ready(function() {
       setInterval(function () {
         $('#showimg').load('{{ url('/dataimg') }}')
       }, 1000);
     });
+>>>>>>> 0be411365fc4d72aad0654aa9cf7409ab4eaa6a9
 </script>
 <style>
 ul.pagination li {
