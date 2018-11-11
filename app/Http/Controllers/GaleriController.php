@@ -64,13 +64,13 @@ class GaleriController extends Controller
         $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
         $request->image->move(public_path('images'), $input['image']);
 
-
+        $input['videolink'] = $request->videolink;
         $input['title'] = $request->title;
         Galeri::create($input);
 
 
     	return back()
-    		->with('success','Gambar berhasil di upload');
+    		->with('success','berhasil di upload');
     }
 
 

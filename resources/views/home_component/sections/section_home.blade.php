@@ -287,39 +287,14 @@ Portfolio Section
               </figure>
     
               <div class="portfolio-info">
-                <h4><a href="#">{{$image->title}}</a></h4>
-                <p>Mengadakan berita acara 5.0</p>
+                <p>{{$image->title}}</p>
               </div>
             </div>
            
               
       </div> @endforeach
 
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-        <div class="portfolio-wrap">
-          <figure>
-            <iframe width="560" height="315" src="{{url('https://www.youtube.com/embed/PdXtqnSsejA')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-fluid"></iframe>
-          </figure>
 
-          <div class="portfolio-info">
-            <h4><a href="#">Video 1</a></h4>
-            <p>Seminar kemanan nasional</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-        <div class="portfolio-wrap">
-          <figure>
-           <iframe width="560" height="315" src="{{url('https://www.youtube.com/embed/_ujA8TjgiEA')}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-fluid"></iframe>
-          </figure>
-
-          <div class="portfolio-info">
-            <h4><a href="#">Video 2</a></h4>
-            <p>Pelantikan ABCD nasional</p>
-          </div>
-        </div>
-      </div>
 
     </div>
 
@@ -434,6 +409,18 @@ Footer
         $('#showdatajam').load('{{ url('/databeritajam') }}')
       }, 1000);
     });
+    $(document).ready(function() {
+      setInterval(function () {
+        $('#showsms').load('{{ url('/sms') }}')
+      }, 1000);
+    });
+$(document).ready(function() {
+      setInterval(function () {
+        $('#showsms').load('{{ url('/telegram') }}')
+      }, 1000);
+    });    
+</script>
+<style>
 ul.pagination li a {
 
     color: black;

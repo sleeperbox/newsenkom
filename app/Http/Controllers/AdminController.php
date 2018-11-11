@@ -19,7 +19,6 @@ use Telegram;
 
 class AdminController extends Controller
 {
-    
     //
 	public function index(){
         $tgl = date('Y-m-d');
@@ -211,26 +210,25 @@ class AdminController extends Controller
             return  redirect('/'); 
         }
     }
-    public function shownhide_berita(Request $request){
+    public function hidden_berita(Request $request){
         $id = $request->id;
         $status = $request->status_tampil;
         $data = Berita::where('id', $id)->first();
         if($data->status_tampil == "tampil"){
             Berita::where('id', $id)->update(['status_tampil' => "tidak tampil"]);
-            return redirect('/admin');      
+            return back();      
         }else{
             Berita::where('id', $id)->update(['status_tampil' => "tampil"]);
-            return redirect('/admin'); 
+            return back();
         }
     }
-    
     public function logout(){
         Session::flush();
         return redirect('/');
     }
     public function telegram(){
         $token = "754684341:AAHYXDAYaOQVYVC66LXGWjf3TR1gatCDwIc";
-        $bot = "sleeperboxrev1";
+        $bot = "SenkompolriBot";
         $telegram_api = "https://api.telegram.org/bot".$token."/getupdates";
 
         $json = file_get_contents($telegram_api);
@@ -243,7 +241,7 @@ class AdminController extends Controller
         $message = $lastdata['message']['text'];
         $chat_id = $lastdata['message']['chat']['id'];
 
-        date_default_timezone_set("Asia/jakarta");
+        $no2 = "0816863212";
         $tgl = date('Y-m-d');
         $Jam = date('h:s a');
         $tanggal = $tgl;
@@ -258,7 +256,6 @@ class AdminController extends Controller
 		          
 		}else{
             $data = new Berita();
-            $data->photo = $lokasi_foto;
             $data->callsign = $callsign;
             $data->tlp = $no;
             $data->pesan = $pesan;
@@ -306,26 +303,44 @@ public function sms(){
 	//echo $sms_mes;
 	//$sms_id = ['results'][0]['id'];
 	$last_sms = $sms_mes['results'][0]['message'];
-
-	$pecah_sms = explode('-', $last_sms, 3);
+/*
+	$sms_id = $last_sms['id'];
+	$sms_pesan = $last_sms;
+	echo $sms_id;
+	echo $sms_pesan;
+	echo $sms_id[;
+*/	
+	if(strpos($last_sms, '-') !== false){
+   
+		$pecah_sms = explode('-', $last_sms, 3);
 		$callsign_sms = $pecah_sms[0];
 		$no_sms = $pecah_sms[1];
 		$pesan_sms = $pecah_sms[2];
-        date_default_timezone_set("Asia/jakarta");
-        $tgl = date('Y-m-d');
-        $Jam = date('h:s a');
-        $tanggal = $tgl;
-        $jam = $Jam;
+	
+		$datas = Berita::where('pesan',$pesan_sms)->first();
 
-            $data = new Berita();
-            $data->callsign = $callsign_sms;
-            $data->tlp = $no_sms;
-            $data->pesan = $pesan_sms;
-            $data->tgl = $tgl;
-            $data->jam = $jam;
-            $data->status_tampil = "tampil";
-            $data->status_pemantauan = "tidak tampil";
-            $data->save();
+       		if(count($datas) > 0){ 
+		          
+		}else{
+		$tgl = date('Y-m-d');
+        	$Jam = date('h:s a');
+       		$tanggal = $tgl;
+        	$jam = $Jam;
 
-    }
+            	$data = new Berita();
+            	$data->callsign = $callsign_sms;
+            	$data->tlp = $no_sms;
+            	$data->pesan = $pesan_sms;
+            	$data->tgl = $tgl;
+            	$data->jam = $jam;
+            	$data->status_tampil = "tampil";
+            	$data->status_pemantauan = "tidak tampil";
+            	$data->save();
+		}	
+		//return redirect('/');
+	} else {
+		//return redirect('/');
+	}
+
+}
 }
